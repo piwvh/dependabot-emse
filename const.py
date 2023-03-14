@@ -17,4 +17,5 @@ CSV_DATA = {
     'fixes_commits_times': os.path.join(DIR_CSV_DATA, 'fixes_commits_times.csv'),
     'fixes_labels': os.path.join(DIR_CSV_DATA, 'fixes_labels.csv'),
     'security_updates_commits': os.path.join(DIR_CSV_DATA, 'security_updates_commits.csv'),
+    'repo_popularity': os.path.join(DIR_CSV_DATA, 'repo_popularity.csv')
 }
