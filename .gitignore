@@ -1,4 +1,11 @@
 .idea/
 __pycache__/
+venv/
 todo.txt
 rq/*.png
+data/json/
+collection/extension/data/repo/
+collection/extension/data/delete
+collection/extension/data/backup
+collection/extension/related_works
+**/.ipynb_checkpoints

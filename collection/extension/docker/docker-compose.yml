@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+  node:
+    container_name: dependabot_node
+    privileged: true
+    build:
+      context: .
+      dockerfile: npm.dockerfile
+    image: dependabot_node:1.0.0
+    volumes:
+      - ./semver.js:/app/semver.js
+    working_dir: /app

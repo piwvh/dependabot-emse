@@ -4,6 +4,7 @@ DIR_ROOT = os.path.dirname(os.path.abspath(__file__))
 DIR_RQ = os.path.join(DIR_ROOT, 'rq')
 DIR_CSV_DATA = os.path.join(DIR_ROOT, 'data', 'csv')
 DIR_JSON_DATA = os.path.join(DIR_ROOT, 'data', 'json')
+DIR_EXTENSION = os.path.join(DIR_ROOT, 'collection', 'extension')
 
 JSON_DATA = {
     'security_updates': os.path.join(DIR_JSON_DATA, 'security_updates')

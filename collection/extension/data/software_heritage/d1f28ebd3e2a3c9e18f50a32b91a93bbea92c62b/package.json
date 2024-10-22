@@ -1,0 +1,20 @@
+{
+  "name": "node-postgres",
+  "description": "node postgres monorepo",
+  "main": "index.js",
+  "private": true,
+  "repository": "git@github.com:brianc/node-postgres.git",
+  "author": "Brian M. Carlson <brian.m.carlson@gmail.com>",
+  "license": "MIT",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "test": "yarn lerna exec yarn test",
+    "lint": "yarn lerna exec --parallel yarn lint"
+  },
+  "devDependencies": {
+    "lerna": "^3.19.0"
+  },
+  "dependencies": {}
+}

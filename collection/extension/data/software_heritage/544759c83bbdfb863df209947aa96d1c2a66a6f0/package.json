@@ -1,0 +1,102 @@
+{
+  "name": "@pangolinjs/core",
+  "version": "5.1.0",
+  "description": "Framework for componentized front end development with Nunjucks, Sass, and JavaScript",
+  "license": "MPL-2.0",
+  "keywords": [
+    "babel",
+    "css",
+    "design system",
+    "es6",
+    "front end",
+    "html",
+    "javascript",
+    "nunjucks",
+    "pattern library",
+    "sass",
+    "styleguide",
+    "webpack"
+  ],
+  "author": {
+    "name": "Fynn Becker",
+    "email": "post@fynn.be"
+  },
+  "homepage": "https://pangolinjs.org",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pangolinjs/core"
+  },
+  "bugs": {
+    "url": "https://github.com/pangolinjs/core/issues",
+    "email": "post@fynn.be"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "bin",
+    "lib",
+    "ui/dist",
+    "ui/index.html"
+  ],
+  "scripts": {
+    "prepack": "cd ui && npm run build",
+    "lint:js": "eslint --format codeframe \"**/*.{js,vue}\"",
+    "lint:css": "stylelint \"**/*.{scss,vue}\" --custom-formatter node_modules/stylelint-codeframe-formatter",
+    "test:unit": "nyc ava",
+    "release": "standard-version"
+  },
+  "bin": {
+    "pangolin-core": "bin/pangolin-core.js"
+  },
+  "dependencies": {
+    "@babel/core": "^7.7.2",
+    "@nuxtjs/friendly-errors-webpack-plugin": "^2.1.0",
+    "babel-loader": "^8.0.6",
+    "chalk": "^3.0.0",
+    "chokidar": "^3.3.0",
+    "ci-info": "^2.0.0",
+    "commander": "^4.0.1",
+    "copy-webpack-plugin": "^5.0.5",
+    "css-loader": "^3.2.0",
+    "eslint-loader": "^3.0.2",
+    "fast-glob": "^3.1.0",
+    "file-loader": "^4.3.0",
+    "lodash.merge": "^4.6.2",
+    "mini-css-extract-plugin": "^0.8.0",
+    "nunjucks": "^3.2.0",
+    "open": "^7.0.0",
+    "postcss-loader": "^3.0.0",
+    "prismjs": "^1.17.1",
+    "sass": "^1.23.7",
+    "sass-loader": "^8.0.0",
+    "style-loader": "^1.0.0",
+    "stylelint-codeframe-formatter": "^1.0.4",
+    "stylelint-webpack-plugin": "^1.1.0",
+    "webpack": "^5.0.0-beta.7",
+    "webpack-bundle-analyzer": "^3.6.0",
+    "webpack-chain": "^6.0.0",
+    "webpack-dev-server": "^3.9.0",
+    "webpack-merge": "^4.2.2",
+    "webpackbar": "^4.0.0",
+    "ws": "^7.2.0"
+  },
+  "devDependencies": {
+    "@pangolinjs/eslint-config": "^3.1.1",
+    "@pangolinjs/stylelint-config": "^1.7.0",
+    "ava": "^2.4.0",
+    "eslint": "^6.6.0",
+    "eslint-plugin-ava": "^9.0.0",
+    "eslint-plugin-vue": "^6.0.1",
+    "nyc": "^15.0.0-beta.1",
+    "standard-version": "^7.0.1",
+    "stylelint": "^12.0.0"
+  },
+  "peerDependencies": {
+    "eslint": "^6.6.0",
+    "stylelint": "^12.0.0"
+  },
+  "engines": {
+    "node": ">= 12.13.0"
+  }
+}

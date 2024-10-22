@@ -1,0 +1,78 @@
+{
+  "name": "@gen3/guppy",
+  "version": "0.4.0",
+  "description": "Server that support GraphQL queries on data from elasticsearch",
+  "main": "src/server/server.js",
+  "directories": {
+    "doc": "doc"
+  },
+  "scripts": {
+    "start": "nodemon --exec babel-node ./src/server/server.js",
+    "gendata": "node ./genData/genData.js",
+    "test": "jest",
+    "eslint": "./node_modules/.bin/eslint --ext js --ext jsx --fix src",
+    "elint": "./node_modules/.bin/eslint --fix",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook",
+    "prepare": "rm -rf dist && mkdir dist && babel src --out-dir dist --ignore '**/*/__tests__/*,**/*/__mocks__/*'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/uc-cdis/guppy.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/uc-cdis/guppy/issues"
+  },
+  "homepage": "https://github.com/uc-cdis/guppy#readme",
+  "dependencies": {
+    "@elastic/elasticsearch": "^7.0.0-rc.1",
+    "@gen3/ui-component": "^0.3.16",
+    "apollo-server": "^2.4.8",
+    "apollo-server-express": "^2.4.8",
+    "array.prototype.flat": "^1.2.2",
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "file-saver": "^2.0.1",
+    "graphql": "^14.1.1",
+    "graphql-middleware": "^3.0.2",
+    "graphql-parse-resolve-info": "^4.1.0",
+    "graphql-tools": "^4.0.4",
+    "graphql-type-json": "^0.2.1",
+    "isomorphic-fetch": "^2.2.1",
+    "lodash": "^4.17.15",
+    "loglevel": "^1.6.1",
+    "node-fetch": "^2.3.0",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.4"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.3.4",
+    "@babel/node": "^7.2.2",
+    "@babel/plugin-transform-runtime": "^7.4.3",
+    "@babel/preset-env": "^7.3.4",
+    "@babel/preset-react": "^7.0.0",
+    "@storybook/addon-actions": "^5.1.1",
+    "@storybook/addon-links": "^5.1.1",
+    "@storybook/addons": "^5.1.1",
+    "@storybook/react": "^5.1.1",
+    "babel-jest": "^24.7.1",
+    "babel-loader": "^8.0.5",
+    "babel-preset-env": "^1.7.0",
+    "commander": "^3.0.1",
+    "eslint": "^6.7.1",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.16.0",
+    "jest": "^24.7.1",
+    "json-schema-faker": "^0.5.0-rc23",
+    "nock": "^10.0.6",
+    "nodemon": "^1.18.10",
+    "react-scripts": "^3.1.1",
+    "react-table": "^6.9.2"
+  }
+}

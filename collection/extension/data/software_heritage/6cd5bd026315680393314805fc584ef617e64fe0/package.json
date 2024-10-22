@@ -1,0 +1,109 @@
+{
+  "private": true,
+  "workspaces": [
+    "docs",
+    "packages/*"
+  ],
+  "dependencies": {
+    "react": "^16.8.5",
+    "react-dom": "^16.8.5"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.8.7",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/preset-env": "^7.8.7",
+    "@babel/preset-flow": "^7.8.3",
+    "@babel/preset-react": "^7.8.3",
+    "@testing-library/jest-dom": "^5.1.1",
+    "@testing-library/react": "^10.0.1",
+    "babel-eslint": "10.1.0",
+    "babel-jest": "^25.1.0",
+    "benchmark": "^2.1.4",
+    "codecov": "^3.6.5",
+    "css-modules-flow-types-cli": "^1.3.0",
+    "danger": "9.2.10",
+    "eslint": "6.8.0",
+    "eslint-config-airbnb": "^18.1.0",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-eslint-comments": "^3.1.2",
+    "eslint-plugin-flowtype": "^4.6.0",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-jest": "^23.8.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-react": "^7.19.0",
+    "eslint-plugin-react-hooks": "^2.5.0",
+    "flow-bin": "^0.116.1",
+    "husky": "^4.2.3",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^25.1.0",
+    "jscodeshift": "^0.7.0",
+    "lint-staged": "^10.0.7",
+    "papaparse": "^5.1.1",
+    "prettier": "1.19.1",
+    "react-test-renderer": "^16.13.0",
+    "rollup-plugin-inline-svg": "^1.1.1",
+    "shelljs": "^0.8.3",
+    "stylelint": "^13.2.1",
+    "stylelint-config-prettier": "^8.0.1",
+    "stylelint-config-standard": "^20.0.0",
+    "stylelint-order": "^4.0.0"
+  },
+  "scripts": {
+    "build": "cd packages/gestalt && yarn build",
+    "codemod": "jscodeshift --ignore-pattern=**/node_modules/**",
+    "lint:js": "eslint .",
+    "lint:css": "stylelint \"packages/**/*.css\"",
+    "flow-generate:css": "./node_modules/.bin/css-modules-flow-types packages/gestalt/src/ >/dev/null",
+    "greenkeeper-lockfile-update": "greenkeeper-lockfile-update",
+    "greenkeeper-lockfile-upload": "greenkeeper-lockfile-upload",
+    "start": "(cd docs && yarn start) & (cd packages/gestalt && yarn watch)",
+    "test": "./scripts/test.sh",
+    "format": "prettier --write \"**/*.{css,html,js,md,yml}\"",
+    "precommit": "lint-staged"
+  },
+  "jest": {
+    "projects": [
+      {
+        "displayName": "node",
+        "testEnvironment": "node",
+        "moduleNameMapper": {
+          "\\.(svg)$": "<rootDir>/scripts/fileMock.js",
+          "\\.(css)$": "identity-obj-proxy"
+        },
+        "testPathIgnorePatterns": [
+          "/node_modules/",
+          "jsdom.test.js"
+        ],
+        "setupFilesAfterEnv": [
+          "<rootDir>scripts/setupJest.js"
+        ]
+      },
+      {
+        "displayName": "jsdom",
+        "testEnvironment": "jsdom",
+        "moduleNameMapper": {
+          "\\.(svg)$": "<rootDir>/scripts/fileMock.js",
+          "\\.(css)$": "identity-obj-proxy"
+        },
+        "testPathIgnorePatterns": [
+          "/node_modules/",
+          "<rootDir>/packages/gestalt-codemods"
+        ],
+        "setupFilesAfterEnv": [
+          "<rootDir>scripts/setupJest.js"
+        ]
+      }
+    ]
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint",
+      "jest --findRelatedTests"
+    ],
+    "*.css": [
+      "stylelint",
+      "flow-generate:css && flow"
+    ]
+  }
+}

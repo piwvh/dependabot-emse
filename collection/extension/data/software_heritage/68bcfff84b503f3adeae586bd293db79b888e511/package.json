@@ -1,0 +1,36 @@
+{
+  "name": "gram-up",
+  "version": "0.1.0",
+  "repository": "https://github.com/instagrambot/GramUp",
+  "description": "Smart Automation for your Instagram inside your browser for free. https://gramup.me",
+  "main": "src/index.js",
+  "dependencies": {
+    "axios": "^0.18.1",
+    "axios-adapter-hmac": "^0.1.1",
+    "blueimp-md5": "^2.10.0",
+    "hmac": "^1.0.1",
+    "js-sha256": "^0.9.0",
+    "uuid-js": "^0.7.5"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.2.3",
+    "babel-loader": "^8.0.5",
+    "babel-plugin-syntax-dynamic-import": "^6.18.0",
+    "uglifyjs-webpack-plugin": "^2.1.1",
+    "webpack": "^4.29.4",
+    "webpack-cli": "^3.2.3"
+  },
+  "scripts": {
+    "dev": "webpack --watch --mode=development --output chrome-ext/background/main.js",
+    "start": "open http://localhost:8000 && python -m SimpleHTTPServer",
+    "build": "webpack --mode=production --output chrome-ext/background/main.js",
+    "build:chrome": "npm run build && npm run zip",
+    "postbuild:chrome": "npm run open-chrome-store",
+    "zip": "rm -rf chrome-ext.zip && zip -r -X chrome-ext.zip chrome-ext",
+    "open-chrome-store": "open https://chrome.google.com/webstore/developer/edit/njonkbhnmmjgancfbncekpgkmidhbbpo",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

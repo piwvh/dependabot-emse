@@ -1,0 +1,70 @@
+{
+  "name": "root",
+  "private": true,
+  "license": "Apache-2.0",
+  "workspaces": [
+    "forge/*",
+    "did/*",
+    "swap/*",
+    "asset/*",
+    "examples/*"
+  ],
+  "author": {
+    "name": "wangshijun",
+    "email": "shijun@arcblock.io",
+    "url": "https://github.com/wangshijun"
+  },
+  "devDependencies": {
+    "eslint": "5.3.0",
+    "eslint-config-airbnb-base": "13.1.0",
+    "eslint-config-prettier": "latest",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-prettier": "latest",
+    "husky": "^2.3.0",
+    "js2dts": "^0.3.3",
+    "jsdoc": "^3.5.5",
+    "lerna": "^3.3.2",
+    "lint-staged": "^7.2.2",
+    "prettier": "^1.6.1",
+    "remark-cli": "^5.0.0",
+    "remark-preset-github": "^0.0.9"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:ArcBlock/forge-js.git"
+  },
+  "remarkConfig": {
+    "plugins": [
+      "preset-github",
+      [
+        "validate-links",
+        {
+          "repository": "ArcBlock/forge-js"
+        }
+      ]
+    ]
+  },
+  "lint-staged": {
+    "*.{js,jsx,mjs,ts,tsx,css,less,scss,json,graphql}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "scripts": {
+    "lint": "lerna run lint",
+    "lint:fix": "lerna run lint:fix",
+    "build": "lerna run clean && lerna run build",
+    "clean": "lerna clean",
+    "test": "CI=1 lerna run test",
+    "coverage": "CI=1 lerna run coverage"
+  },
+  "dependencies": {
+    "axios": "^0.19.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged && lerna run precommit",
+      "pre-push": "lint-staged && lerna run prepush"
+    }
+  }
+}

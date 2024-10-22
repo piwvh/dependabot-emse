@@ -1,0 +1,52 @@
+{
+  "name": "root",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "benchmark/*"
+  ],
+  "scripts": {
+    "lerna:version": "lerna version --git-remote upstream",
+    "lerna:publish": "lerna publish from-git --yes",
+    "ci": "npm-run-all build lint format:validate test",
+    "ci:all": "yarn run ci && yarn run test:prettier-plugin-java test:e2e-jhipster1 && yarn run test:prettier-plugin-java test:e2e-jhipster2",
+    "test": "lerna run test --stream",
+    "test:prettier-plugin-java": "lerna --stream --scope=prettier-plugin-java run",
+    "lint": "eslint packages/**/*.js",
+    "format:fix": "prettier --write \"**/*.@(js|json|md)\"",
+    "format:validate": "prettier --list-different \"**/*.@(js|json|md)\"",
+    "build": "node packages/java-parser/scripts/unicode.js packages/java-parser/resources/Unicode/UnicodeData.txt && prettier --write packages/java-parser/src/unicodesets.js && node packages/java-parser/scripts/gen-diagrams.js",
+    "prettier": "prettier --plugin=./packages/prettier-plugin-java --parser=java",
+    "update-test-outputs": "node packages/prettier-plugin-java/scripts/update-test-output.js"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,md,json}": [
+      "prettier --write"
+    ],
+    "*.js": [
+      "eslint --fix"
+    ]
+  },
+  "devDependencies": {
+    "benchmark": "^2.1.4",
+    "chai": "^4.2.0",
+    "eslint": "6.8.0",
+    "eslint-config-google": "0.14.0",
+    "eslint-config-prettier": "6.10.1",
+    "fs-extra": "^8.1.0",
+    "husky": "4.2.5",
+    "klaw-sync": "^6.0.0",
+    "lerna": "3.20.2",
+    "lint-staged": "10.1.4",
+    "mocha": "^7.1.1",
+    "npm-run-all": "^4.1.5",
+    "nyc": "^15.0.1",
+    "prettier": "2.0.4",
+    "sinon": "^9.0.2"
+  }
+}

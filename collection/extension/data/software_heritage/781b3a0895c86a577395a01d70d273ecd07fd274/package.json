@@ -1,0 +1,43 @@
+{
+  "private": true,
+  "dependencies": {},
+  "devDependencies": {
+    "lerna": "^3.0.0-beta.21",
+    "onchange": "^3.2.1"
+  },
+  "scripts": {
+    "bootstrap": "lerna bootstrap",
+    "bootstrap:ci": "lerna bootstrap --npm-ci-mode",
+    "build:docs": "cd docs && make html",
+    "clean:docs": "cd docs && make clean",
+    "clean:modules": "lerna clean",
+    "watch:docs": "onchange 'docs/**/*.rst' 'docs/**/*.py' -- npm run build:docs"
+  },
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ],
+    "nohoist": [
+      "lab.js/chai",
+      "lab.js/chai/**",
+      "lab.js/es6-promise",
+      "lab.js/es6-promise/**",
+      "lab.js/karma",
+      "lab.js/karma-coverage",
+      "lab.js/karma-coverage/**",
+      "lab.js/karma-chrome-launcher",
+      "lab.js/karma-chrome-launcher/**",
+      "lab.js/karma-mocha",
+      "lab.js/karma-mocha/**",
+      "lab.js/karma-sauce-launcher",
+      "lab.js/karma-sauce-launcher/**",
+      "lab.js/mocha",
+      "lab.js/mocha/**",
+      "lab.js/lodash",
+      "lab.js/sinon",
+      "lab.js/sinon/**",
+      "lab.js.builder/bootstrap",
+      "lab.js.website/bootstrap"
+    ]
+  }
+}

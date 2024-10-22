@@ -1,0 +1,58 @@
+{
+  "name": "ss2json",
+  "version": "3.0.3",
+  "description": "Convert Google Spreadsheet contents to JSON. Also update Google spreadsheet from JSON data.",
+  "keywords": [
+    "json",
+    "google",
+    "spreadsheet",
+    "convert",
+    "update"
+  ],
+  "main": "index.js",
+  "scripts": {
+    "lint": "standard",
+    "test": "npm run lint && npm run unit",
+    "unit": "jest"
+  },
+  "bin": {
+    "ss2json": "./bin/ss2json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abetomo/node-ss2json.git"
+  },
+  "author": "abetomo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/abetomo/node-ss2json/issues"
+  },
+  "homepage": "https://github.com/abetomo/node-ss2json#readme",
+  "devDependencies": {
+    "@alrra/travis-scripts": "^3.0.1",
+    "jest": "^24.8.0",
+    "request": "^2.88.0",
+    "standard": "^13.1.0"
+  },
+  "dependencies": {
+    "commander": "^3.0.0",
+    "googleapis": "^42.0.0"
+  },
+  "files": [
+    "CHANGELOG.md",
+    "LICENSE",
+    "README.md",
+    "__mocks__",
+    "__tests__",
+    "bin",
+    "index.js",
+    "lib",
+    "package.json"
+  ],
+  "jest": {
+    "collectCoverage": true
+  },
+  "engines": {
+    "node": ">= 8.0.0"
+  }
+}

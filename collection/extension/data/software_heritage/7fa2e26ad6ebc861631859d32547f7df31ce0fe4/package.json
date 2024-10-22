@@ -1,0 +1,48 @@
+{
+  "name": "mtgjson-website",
+  "version": "2.0.0",
+  "author": "MTGJSON Developers",
+  "repository": "https://github.com/mtgjson/mtgjson-website",
+  "license": "MIT",
+  "engines": {
+    "node": "^12.8.0",
+    "yarn": "^1.21.1"
+  },
+  "scripts": {
+    "dev": "vuepress dev docs",
+    "build": "vuepress build docs && yarn generate-version-atom",
+    "purge": "rm -rf node_modules && yarn cache clean",
+    "test": "yarn lint && jest --coverage --coverageDirectory='__coverage__'",
+    "test:full": "yarn test && yarn build",
+    "lint": "eslint --fix --ext .js,.vue docs/.vuepress",
+    "regenerate-schema": "node ./utils/regenerate-schema.js",
+    "generate-version-atom": "node ./utils/generate-version-atom.js",
+    "optimize-images": "imagemin --plugin.webp.quality=80 docs/.vuepress/public/images --out-dir=docs/.vuepress/public/images",
+    "bootstrap": "yarn global add imagemin-cli imagemin-webp",
+    "heroku-prebuild": "yarn bootstrap"
+  },
+  "dependencies": {
+    "js-essentials": "0.0.6",
+    "uuid": "^3.3.3",
+    "vuepress": "^1.2.0",
+    "vuepress-plugin-container": "^2.1.2",
+    "vuepress-plugin-feed": "^0.1.8",
+    "vuex": "^3.1.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.7.5",
+    "@babel/preset-env": "^7.7.6",
+    "ajv": "^6.10.2",
+    "babel-eslint": "^10.0.3",
+    "babel-jest": "^24.9.0",
+    "codecov": "^3.6.5",
+    "eslint": "^6.7.2",
+    "eslint-plugin-vue": "^6.0.1",
+    "husky": "^3.1.0",
+    "jest": "^24.9.0",
+    "node-fetch": "^2.6.0",
+    "pug": "^2.0.4",
+    "pug-plain-loader": "^1.0.0",
+    "vue-eslint-parser": "^7.0.0"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "name": "root",
+  "private": true,
+  "scripts": {
+    "postinstall": "npm run bootstrap",
+    "bootstrap": "lerna exec npm install && npm run test:install && lerna link",
+    "test": "lerna run test --parallel",
+    "test:install": "lerna exec npm run test:install --scope @inkline/nuxt --scope @inkline/vue-cli-plugin-inkline --parallel",
+    "lint": "lerna run lint --parallel",
+    "dev": "lerna run dev --parallel",
+    "build": "npm run build:inkline && npm run build:docs",
+    "build:inkline": "lerna run build --scope @inkline/inkline",
+    "build:docs": "lerna run generate --scope @inkline/docs"
+  },
+  "devDependencies": {
+    "lerna": "^3.20.2"
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "name": "@codex-protocol/service.eel",
+  "version": "0.1.0",
+  "description": "A simple service that listens for events emitted by Codex Protocol smart contracts on the Ethereum blockchain.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/codex-protocol/service.eel"
+  },
+  "contributors": [
+    {
+      "name": "John Forrest"
+    },
+    {
+      "name": "Colin Wood"
+    }
+  ],
+  "license": "AGPL-3.0-or-later",
+  "scripts": {
+    "clean": "rm -rf dist",
+    "lint": "eslint src/.",
+    "build": "npm run lint && npm run compile",
+    "drop-db": "mongo eel --eval 'db.dropDatabase()'",
+    "start": "npm run lint && babel-node src/index.js",
+    "compile": "npm run clean && babel src --out-dir dist",
+    "link-all": "npm link @codex-protocol/ethereum-service",
+    "start:compiled": "npm run compile && node dist/index.js",
+    "install-and-link": "rm -rf node_modules && npm install && npm run link-all"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.0.0",
+    "@babel/runtime-corejs2": "^7.0.0",
+    "@codex-protocol/ethereum-service": "^2.1.13",
+    "agenda": "^2.1.0",
+    "bluebird": "^3.5.1",
+    "dotenv": "^4.0.0",
+    "filewalker": "^0.1.3",
+    "mongoose": "^4.13.19",
+    "raven": "2.5.0",
+    "winston": "^2.4.2",
+    "winston-raven-sentry": "^1.0.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.5.0",
+    "@babel/core": "^7.0.0",
+    "@babel/node": "^7.0.0",
+    "@babel/plugin-proposal-class-properties": "^7.0.0",
+    "@babel/plugin-transform-runtime": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/register": "^7.0.0",
+    "@codex-protocol/eslint-config-base": "^2.0.0",
+    "babel-eslint": "^10.0.3",
+    "eslint": "^6.2.2",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2"
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "name": "gen3-qa",
+  "version": "0.1.0",
+  "description": "Bionimbus Data Portal",
+  "main": "index.js",
+  "dependencies": {
+    "atob": "^2.1.2",
+    "es6-promise": "^4.2.5",
+    "isomorphic-fetch": "^2.2.1",
+    "mocha-junit-reporter": "^1.23.0",
+    "mocha-multi": "^1.1.0",
+    "node-ssh": "^5.1.2",
+    "prettier": "^1.14.2",
+    "selenium-standalone": "^6.13.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/uc-cdis/auto-qa.git"
+  },
+  "author": "thanhnd",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/uc-cdis/auto-qa/issues"
+  },
+  "devDependencies": {
+    "@google-cloud/storage": "^2.5.0",
+    "chai": "^4.1.2",
+    "chai-as-promised": "^7.1.1",
+    "chai-subset": "^1.6.0",
+    "codeceptjs": "^2.1.5",
+    "eslint": "^6.0.1",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-codeceptjs": "^0.5.0",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-react": "^7.14.2",
+    "googleapis": "^40.0.0",
+    "jsdom": "^12.0.0",
+    "nconf": "^0.10.0",
+    "request": "^2.88.0",
+    "ssl-root-cas": "^1.2.5",
+    "unirest": "^0.6.0",
+    "uuid": "^3.2.1",
+    "webdriverio": "^5.10.9"
+  },
+  "scripts": {
+    "selenium-install": "selenium-standalone install",
+    "selenium-start": "selenium-standalone start > /dev/null 2>&1 &",
+    "selenium-kill": "pkill -f selenium-standalone",
+    "eslint": "eslint --ignore-path .gitignore .",
+    "test": "codeceptjs run",
+    "grep-test": ". local_run.sh && codeceptjs run --verbose --grep",
+    "create-service": "node scripts/create_service.js"
+  }
+}

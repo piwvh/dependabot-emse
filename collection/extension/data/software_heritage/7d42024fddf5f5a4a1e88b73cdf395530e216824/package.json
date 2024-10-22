@@ -1,0 +1,66 @@
+{
+  "name": "warframe-worldstate-data",
+  "version": "1.0.5",
+  "description": "Warframe data for use with warframe-worldstate-parser",
+  "main": "exports.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-json": "^1.0.0",
+    "chai-json-schema": "^1.5.1",
+    "eslint": "^6.7.2",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "mocha": "^5.2.0",
+    "sinon": "^8.1.1",
+    "sinon-chai": "^3.4.0"
+  },
+  "scripts": {
+    "lint": "npx eslint --ignore-path .gitignore .",
+    "lint:fix": "npx eslint --ignore-path .gitignore . --fix",
+    "test": "npx nyc --reporter=text mocha",
+    "coverage": "npm test && npx nyc report --reporter=text-lcov | npx coveralls",
+    "sort_lang": "python tools/sort_languages.py"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wfcd/warframe-worldstate-data.git"
+  },
+  "keywords": [
+    "warframe-worldstate",
+    "javascript",
+    "warframe"
+  ],
+  "author": "tobitenno",
+  "contributors": [
+    "tobitenno",
+    "cagatayldzz",
+    "scruffyrules",
+    "nspacestd",
+    "dsinn",
+    "msaracevic",
+    "Markcreator",
+    "delfunua",
+    "esunder",
+    "dbarbuzzi",
+    "ViriatoLusitano",
+    "iPeer",
+    "IhToN",
+    "OrcusCZ",
+    "DaxterSpeed",
+    "sgkoishi",
+    "Hikoaki",
+    "Tithen-Firion"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wfcd/warframe-worldstate-data/issues"
+  },
+  "homepage": "https://github.com/wfcd/warframe-worldstate-data#readme",
+  "release": {
+    "branch": "master"
+  }
+}

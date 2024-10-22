@@ -1,0 +1,52 @@
+{
+  "name": "playground",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "codemirror": "^5.38.0",
+    "react-hotkeys": "^1.1.4",
+    "react-markdown": "^4.0.6",
+    "config": "^1.28.1",
+    "d3-color": "^1.0.3",
+    "d3-scale": "^2.0.0",
+    "d3-shape": "^1.2.0",
+    "font-awesome": "^4.7.0",
+    "html2canvas": "^1.0.0-alpha.12",
+    "jquery": "^3.3.1",
+    "jspdf": "^1.4.1",
+    "material-ui": "^0.20.0",
+    "moment-timezone": "^0.5.14",
+    "path": "^0.12.7",
+    "query-string": "^6.0.0",
+    "react": "^16.2.0",
+    "react-bootstrap": "^0.32.1",
+    "react-codemirror2": "^5.0.2",
+    "react-d3-components": "^0.9.0",
+    "recharts": "^1.4.1",
+    "react-dom": "^16.2.0",
+    "react-dropzone": "^4.2.3",
+    "react-fontawesome": "^1.6.1",
+    "react-redux": "^5.0.6",
+    "react-router-dom": "^4.2.2",
+    "react-router-redux": "^5.0.0-alpha.9",
+    "react-tap-event-plugin": "^3.0.2",
+    "redux": "^3.7.2",
+    "redux-devtools": "^3.4.1",
+    "redux-devtools-extension": "^2.13.2",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.2.0",
+    "semantic-ui-css": "^2.2.12",
+    "semantic-ui-react": "^0.81.1",
+    "webpack": "^3.10.0",
+    "webpack-dev-server": "^3.1.11"
+  },
+  "devDependencies": {
+    "react-scripts": "1.0.17"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}

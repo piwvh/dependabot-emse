@@ -1,0 +1,66 @@
+{
+  "name": "loaders.gl",
+  "description": "Framework-independent loaders for visualization, 3D graphics and geospatial formats",
+  "license": "MIT",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/visgl/loaders.gl"
+  },
+  "keywords": [
+    "webgl",
+    "loader",
+    "3d",
+    "point cloud",
+    "GLB",
+    "OBJ",
+    "PLY",
+    "LAZ",
+    "PCD",
+    "KML"
+  ],
+  "workspaces": [
+    "modules/*"
+  ],
+  "scripts": {
+    "bootstrap": "yarn install-fast && ocular-bootstrap",
+    "install-fast": "PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true yarn",
+    "start": "echo 'Please see loaders.gl website for how to run examples' && open https://loaders.gl/docs",
+    "build": "ocular-clean && lerna run pre-build && ocular-build",
+    "build-workers": "lerna run pre-build",
+    "clean": "ocular-clean",
+    "cover": "ocular-test cover",
+    "lint": "tsc && ocular-lint",
+    "bump": "ocular-bump",
+    "publish": "ocular-publish",
+    "test": "ocular-test",
+    "metrics": "./scripts/metrics.sh && ocular-metrics",
+    "version": "yarn build",
+    "pre-commit": "ocular-lint",
+    "pre-push": "ocular-test fast"
+  },
+  "devDependencies": {
+    "@luma.gl/core": "^8.1.2",
+    "@luma.gl/debug": "^8.1.2",
+    "@luma.gl/test-utils": "^8.1.2",
+    "@probe.gl/bench": "^3.3.0-alpha.8",
+    "@probe.gl/test-utils": "^3.3.0-alpha.8",
+    "babel-loader": "^8.0.6",
+    "core-js": "^3.2.1",
+    "coveralls": "^3.0.3",
+    "eslint-config-uber-jsx": "^3.3.3",
+    "eslint-plugin-babel": "^5.3.0",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-react": "^7.19.0",
+    "gl": "^4.4.0",
+    "gl-matrix": "^3.1.0",
+    "ocular-dev-tools": "^0.1.8",
+    "pre-commit": "^1.2.2",
+    "pre-push": "^0.1.1",
+    "reify": "^0.19.1",
+    "source-map-support": "^0.5.12",
+    "typescript": "^3.7.4"
+  },
+  "pre-commit": "pre-commit",
+  "pre-push": "pre-push"
+}

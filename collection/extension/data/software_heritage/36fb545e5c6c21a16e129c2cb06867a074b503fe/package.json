@@ -1,0 +1,106 @@
+{
+  "name": "tab",
+  "version": "0.1.0",
+  "description": "Tab for a Cause.",
+  "private": true,
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.4.4",
+    "@babel/node": "^7.2.2",
+    "@babel/preset-env": "^7.4.4",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-jest": "24.8.0",
+    "eslint": "5.16.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-prettier": "^4.3.0",
+    "eslint-plugin-import": "^2.17.2",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-react": "^7.13.0",
+    "husky": "^2.3.0",
+    "jest": "24.7.1",
+    "lint-staged": "^8.1.0",
+    "nodemon": "^1.19.0",
+    "npm-run-all": "^4.1.5",
+    "npmlog": "^4.1.2",
+    "prettier": "^1.17.1"
+  },
+  "scripts": {
+    "build": "yarn run all:install & docker-compose build",
+    "start": "echo \"Run either start:newtab or start:search\"",
+    "start:shared": "npm-run-all -p docker:start s3:start web:graphqlschema:monitor lambda:start graphql:start",
+    "start:newtab": "yarn run start:shared web:start:newtab",
+    "start:search": "yarn run start:shared web:start:search",
+    "stop": "docker-compose stop",
+    "manage-fixtures": "babel-node ./scripts/manage-fixtures.js",
+    "test": "npm-run-all -s parent:test graphql:test lambda:test web:test dynamodb:test",
+    "test:integration": "npm-run-all -s graphql:test:integration web:test:integration",
+    "ci:deploy": "babel-node ./scripts/deploy.js",
+    "ci:deployservices": "npm-run-all -s dynamodb:deploy lambda:deploy graphql:deploy s3:deploy web:deploy",
+    "ci:test": "babel-node ./scripts/runTests.js",
+    "ci:test:integration": "babel-node ./scripts/runEndToEndTests.js",
+    "parent:install": "yarn install",
+    "parent:format": "prettier \"scripts/*.{js,jsx,ts,tsx,json,css,scss,md}\"",
+    "parent:format:fix": "yarn run parent:format --write",
+    "parent:lint": "eslint \"scripts/*.{js,jsx}\"",
+    "parent:test": "yarn run parent:lint && jest",
+    "all:install": "yarn run parent:install && npm-run-all -s s3:install web:install graphql:install dynamodb:install lambda:install",
+    "docker:start": "docker-compose up 2>&1 | node scripts/log-prefix.js [docker] cyan",
+    "dynamodb:deploy": "cd ./dynamodb && yarn run deploy",
+    "dynamodb:install": "cd ./dynamodb && yarn install",
+    "dynamodb:test": "cd ./dynamodb && yarn test",
+    "dynamodb:format:fix": "cd ./dynamodb && yarn run format:fix",
+    "graphql:deploy": "cd ./graphql && yarn run deploy",
+    "graphql:install": "cd ./graphql && yarn install",
+    "graphql:start": "cd ./graphql && yarn run start 2>&1 | node ../scripts/log-prefix.js [graphql] green",
+    "graphql:test": "cd ./graphql && yarn test",
+    "graphql:format:fix": "cd ./graphql && yarn run format:fix",
+    "graphql:test:integration": "cd ./graphql && yarn run test:integration",
+    "lambda:deploy": "cd ./lambda && yarn run deploy",
+    "lambda:install": "cd ./lambda && yarn install",
+    "lambda:start": "cd ./lambda && yarn run start 2>&1 | node ../scripts/log-prefix.js [lambda] red",
+    "lambda:test": "cd ./lambda && yarn test",
+    "lambda:format:fix": "cd ./lambda && yarn run format:fix",
+    "web:deploy": "cd ./web && yarn run deploy",
+    "web:graphqlschema:monitor": "nodemon --watch graphql/data/schema.graphql --exec \"yarn run web:graphqlschema:update\" 2>&1 | node scripts/log-prefix.js [node] grey",
+    "web:graphqlschema:update": "cp graphql/data/schema.graphql web/data/schema.graphql",
+    "web:install": "cd ./web && yarn install",
+    "web:test": "cd ./web && yarn test",
+    "web:test:integration": "cd ./web && yarn test:integration",
+    "web:start:newtab": "cd ./web && yarn run start:newtab 2>&1 | node ../scripts/log-prefix.js [web] blue",
+    "web:start:search": "cd ./web && yarn run start:search 2>&1 | node ../scripts/log-prefix.js [web] blue",
+    "web:format:fix": "cd ./web && yarn run format:fix",
+    "s3:deploy": "cd ./s3 && yarn run deploy",
+    "s3:install": "cd ./s3 && yarn install",
+    "s3:start": "cd ./s3 && yarn run start | node ../scripts/log-prefix.js [s3] yellow"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
+      "yarn run parent:format:fix",
+      "yarn run web:format:fix",
+      "yarn run graphql:format:fix",
+      "yarn run lambda:format:fix",
+      "yarn run dynamodb:format:fix",
+      "git add"
+    ]
+  },
+  "jest": {
+    "roots": [
+      "<rootDir>/scripts/"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gladly-team/tab.git"
+  },
+  "author": "Gladly Team",
+  "bugs": {
+    "url": "https://github.com/gladly-team/tab/issues"
+  },
+  "homepage": "https://github.com/gladly-team/tab#readme"
+}

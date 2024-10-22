@@ -1,0 +1,450 @@
+repository,package,fix_commit,commit_message,label,old_label,,,,45
+11ways/hawkejs,codecov,4da569b5a8f00e46e474b33540df0af216e1e60f,Attempt to solve trimming black elements on the browser side,other,,,,,
+2600hz/monster-ui,acorn,0cbda229a4e9d0f44ed3c7f1b6f0e96184baa123,,empty,,,,,
+AdguardTeam/AdguardBrowserExtension,mixin-deep,65536d813f7fdb1756a88b21144530de0b792187,"update yarn, scriptlets and build",dependencies,,,,,
+AdguardTeam/AdguardBrowserExtension,https-proxy-agent,65536d813f7fdb1756a88b21144530de0b792187,"update yarn, scriptlets and build",dependencies,,,,,
+AdguardTeam/Scriptlets,mixin-deep,4924a55ae8a0118ad0f23ae08d6b1618c5ffe8a0,update dependencies and fix eslint notifications,dependencies,,,,,
+AresMUSH/ares-webportal,https-proxy-agent,abea55f8dac55074ce161873b6abfa80382b2d39,branch 'dev',other,,,,,
+AresMUSH/ares-webportal,https-proxy-agent,abea55f8dac55074ce161873b6abfa80382b2d39,branch 'dev',other,,,,,
+Backendless/Console-SDK,mixin-deep,82b86163be7fea75689999345be1453e33d43396,- v2.7.24-next-1,other,,,,,
+BoostIO/Boostnote,eslint,27e403108cab69689bc160b8e9b38b7e865cf955,,empty,,,,,
+C0deboy/jaki-jezyk-programowania,eslint-utils,97a0e213a54b51b8ff2930b80635d3504a68c48b,updated dependencies and css tweaks,dependencies,,,,,
+CANDY-LINE/candy-red,mixin-deep,81678271cb2a15388f690959698a2c19baabd44a,Reorganize dependencies,dependencies,,,,,
+CANDY-LINE/candy-red,handlebars,fee7597dd2b72f39741de7bd2832c2381e3a4573,Bump core and default nodes,dependencies,,,,,
+CalderaWP/Caldera-Forms,handlebars,73c49d3838cdd61f6af64ec941673526887da94d,merge webpack pr in #3437,other,,,,,
+CalderaWP/Caldera-Forms,acorn,d40c31ce99c7253dcbb060b229ebfec905963f21,Remove duplicate React dependency interference,dependencies,,,,,
+Caltech-IPAC/firefly,mixin-deep,0a339dd8cb82f497f43ebb8c1b785b3233ede541,"Firefly-451: package.json updates
+
+  - removed all reference to numeral package
+  - Allows any version of node v8 or later
+  - Most packages updated
+  - Packages now locked at their revisions instead of minor releases
+  - Babel updated, to most recent, 7.8
+  - ESlint updated to most recent, and now better supports ES2020
+  - Jest update some, can go to most recent with node 8
+  - JSDoc updated to most recent
+  - Webpack updated a few revisions, (minor)
+  - Other package updated when there is compatibility
+  - Cleaned out several unused packages
+  - Added `package-json-doc.md` to help better document package.json
+  - transformation-matrix-js moved from npm package to externalSource
+     - it is not longer supported as a npm package.
+  - changed yarn install to yarn install --ignore-platform
+     - this is because of a bug in yarn fsevents is an optional dependency
+       and if in resolutions, npm works correctly
+       see https://github.com/yarnpkg/yarn/pull/7273
+  - changed a couple of files of use `?.` to make sure it works
+     - optional chaining
+  - to update all the url load we have to change the way we reference images
+    in css files. we not reference them under ~images instread of /images
+  - respond from feedback
+  - Small bug fixes:
+      - Fixes Firefly-470
+      - Fixes Firefly-476
+      - Fixes Firefly-477",dependencies,,,,,
+CarPalFleet/JavaScript-SDK,mixin-deep,2b8e48a71e1fe29fe863739e12911ee9ceeb69c7,Add get list of driver services endpoint,other,,,,,
+ChromeDevTools/debugger-protocol-viewer,mixin-deep,2398b1a577cdac0abc531d32da9cfb16e746f473,remove yarn.lock. we using npm now,dependencies,,,,,
+City-of-Helsinki/mvj-ui,codecov,58a46c04b8793eb30decada60c040faaa67d9c91,area unit fixes,other,,,,,
+City-of-Helsinki/mvj-ui,acorn,a3a411e9c6b0d341a3ee7d7ec36f51488ad1c26a,upgraded depencies to latest,dependencies,,,,,
+CivicActions/civicactions.com,axios,5bdab8c14fac065816820899fc1d6c9d009f2eed,CA-477: Upgrade Gatsby and dependencies.,dependencies,,,,,
+CodyJasonBennett/portfolio,eslint-utils,dfdccec1bc854e5337b6d4326f0572332d78a52f,,empty,,,,,
+DBCDK/content-first,knex,3365dd3534d88b86cde39096f932ecf115002d38,,empty,,,,,
+EDM-Spot/OtterBot,mixin-deep,6a2f4b9ea89b7cf9e7be211f04e29ec3e063327d,update,other,,,,,
+EdgeApp/edge-core-js,acorn,28e5a80275c8080f66e5bd1abe19d52351b33684,Upgrade devDependencies,dependencies,,,,,
+EdgeApp/edge-currency-accountbased,acorn,f5a0a124735f783aa6bba5dd3cedc9e1c64d066d,Update devDependencies,dependencies,,,,,
+ErikVerheul/OneBacklog,acorn,d8ede7c8c45d8a2fc23e738222d8e0e7c8989c76,NPM update + npm install,dependencies,,,,,
+ErikVerheul/OneBacklog,jquery,37919f166bccf13683924228c37365167a9d625c,dependabot[bot] <support@github.com> suggestion implemented,dependabot,,,,,
+ErikVerheul/OneBacklog,jquery,37919f166bccf13683924228c37365167a9d625c,dependabot[bot] <support@github.com> suggestion implemented,dependabot,,,,,
+ExploreConsulting/netsuite-fasttrack-toolkit-ss2,mixin-deep,85e3cfc0d79a7532e94df870eac14fc8c832026b,rerun npm install - without any links to the old Explore Artifactory server.,dependencies,,,,,
+Faithlife/styled-ui,mixin-deep,feaa2131daeb8220b7c7eedb15c74fbd91356c5d,,empty,,,,,
+Frontify/sketch,acorn,699a169adea90063f19b9c4aec119b9935841484,"Add @babel/plugin-transform-runtime"",""@babel/plugin-syntax-async-generators, Update ""@skpm/builder""
+
+Signed-off-by: jonasbuechel <jonas@frontify.com>",dependencies,,,,,
+GetStream/stream-chat-react,acorn,3d131ba63bae2d51f5b4244b4608d1dabaf10e52,Updating stream-chat version,dependencies,,,,,
+GetStream/stream-chat-react,acorn,18874520e77751b0db1776ad3b1c5d664342ccd7,remove old example apps,other,,,,,
+GetStream/stream-chat-react,acorn,18874520e77751b0db1776ad3b1c5d664342ccd7,remove old example apps,other,,,,,
+GetStream/stream-chat-react,acorn,18874520e77751b0db1776ad3b1c5d664342ccd7,remove old example apps,other,,,,,
+GetStream/stream-chat-react,acorn,31bbda5c2d328c6e43538a07ac95bd0a31b2f1f1,merge master,other,,,,,
+HSLdevcom/hsl-map-publisher,acorn,28040764baca1b484af80365f861a54e17b5dffd,yarn.lock update,dependencies,,,,,
+Integreat/integreat-webapp,mixin-deep,287604844fe0ce18047a03b5f94bc378be38eea5,NATIVE-508: Upgrade all dependencies according to their ranges in package.json,dependencies,,,,,
+LedgerHQ/ledgerjs,mixin-deep,365a9620b2a0e20478ff731cc7ba48c395f5031e,Upgrade dependencies,dependencies,,,,,
+Neko250/rlspain,mixin-deep,08b8fdf5d07e3fd8ac07e3ff4ffda4e25ba22ab1,refactor: migrate to yarn,dependencies,,,,,
+OpenKnowledgeMaps/Headstart,bootstrap,f6ba2f7c7acacb72500d81ea56a10747f219082c,,empty,,,,,
+OpenKnowledgeMaps/Headstart,bootstrap,f6ba2f7c7acacb72500d81ea56a10747f219082c,,empty,,,,,
+OpenKnowledgeMaps/Headstart,bootstrap,f6ba2f7c7acacb72500d81ea56a10747f219082c,,empty,,,,,
+OpenNeuroOrg/openneuro,codecov,4521dffd47e2873084ba962eb031935870105311,Remove unused codecov dev dep from openneuro-server,dependencies,,,,,
+Optum/mockiato,https-proxy-agent,bc6650af2bcf62ac7298327d8cfded4a5d6e68a9,dependencies security vulnerabilities,dependencies + security,,,,,
+OrangeXC/gank,codecov,9800cfc30d2baacc3870f3eb344bb27812592200,Upgrade packages,dependencies,,,,,
+Paturages/chorus,acorn,a11d98cec8011909cebf3ed58dd5f3518b551605,Update dependencies,dependencies,,,,,
+Paturages/chorus,https-proxy-agent,a11d98cec8011909cebf3ed58dd5f3518b551605,Update dependencies,dependencies,,,,,
+RobinHerbots/Inputmask,mixin-deep,378a7d171d3b9983b3039d356f4041ee55532194,cleanup dependencylib code etc,dependencies,,,,,
+SparkPost/matchbox,mixin-deep,d7e97c31e7d15151c7484cf2aa239fd4a0da2ec4,"Add routes, layout, placeholder pages",other,,,,,
+StatEngine/stat-engine,webpack-bundle-analyzer,ae4c2f15d97bb7bbe63d3c2acef40ad9d5bf4af3,npm audit fixes,dependencies,,,,,
+StraboSpot/strabo-mobile,mixin-deep,e6413b2542760a4034010aad6d7bede5ecc02e98,Security Fix: mixin-deep,security,,,,,
+StraboSpot/strabo-mobile,eslint,72e4895b8d2a82468680e8989c4b73415961b84e,Security Fix: eslint,security,,,,,
+StraboSpot/strabo-mobile,tar,afc3367bbc6fc00aa3f0ff96cc32b29886d476d0,Security Fix: tar,security,,,,,
+TankerHQ/sdk-js,codecov,5f8b774afab855ba369677406d06931ec2fdff89,"chore(deps): bump codecov
+
+fixes:
+https://github.com/advisories/GHSA-5q88-cjfq-g2mh",dependencies + security,I followed the link and it contains vulnerability details,,,,
+Thorium-Sim/thorium,mixin-deep,f68377f73b4798f44a20e021f2d7b26c620ca1c7,"Moved everything to be a single package, instead of split between client and server. Lots of things are broken, probably beacause of dependency issues.",dependencies,,,,,
+algenty/grafana-flowcharting,acorn,17c89c1e3314a4a145082ffeac16deca68f9459f,backup snapshot,other,,,,,
+b2wads/grimorio-ui,webpack-bundle-analyzer,ed113cff4730a228882111fc288d843372a6dc97,fix Ajusta questões de vulnerabilidade de versão,security,,Translation: Adjust version vulnerability issues,,,
+baukh789/GridManager,acorn,2333e91817796b56cda169ed8cff7fbf5713b752,禁用边框线时，宽度调整开启hover状态，y轴滚动条增加最小显示高度,other,,"Translation: When borders are disabled, width adjustment is enabled in hover state, and the y-axis scroll bar increases the minimum display height",,,
+brion/ogv.js,mixin-deep,f5e6c55422b9dbad8b791e93fb6a7bbe797ba2b0,npm audit fix,dependencies,,,,,
+brion/ogv.js,acorn,ef057805eb5cb89ef8fc2fc11f6d9cea16d1a2d1,npm audit fix,dependencies,,,,,
+bunq/doc,mixin-deep,2b74ebfc2a622ebec86f5c3d17ce7d1dbb1b31c8,Updated yarn.lock,dependencies,,,,,
+bunq/doc,eslint-utils,4c08456139f07f5dab28605f6f8831f3985602d3,Updated dependencies.,dependencies,,,,,
+bunq/doc,acorn,2b74ebfc2a622ebec86f5c3d17ce7d1dbb1b31c8,Updated yarn.lock,dependencies,,,,,
+carbon-design-system/gatsby-theme-carbon,acorn,28288dbc6eb8f76ddb1828de5b42060682ae601f,,empty,,,,,
+catarse/catarse.js,acorn,3781c6a42c0d1b63a8ab832ec24745c79a6dd753,redist,other,,,,,
+catdad/raw-viewer,acorn,b13a5e1d85525480808c5b35de2c0d8099c0ca39,updating internal dependencies,dependencies,,,,,
+chteuchteu/MaterialDesignIcons-Picker,mixin-deep,f344b4b89e29484021f36050c3f2d7f8bbb49a18,Dependencies update,dependencies,,,,,
+cibernox/ember-power-select,acorn,5272dec31dab38b915b3eda99f910f867f59d55d,Ensure @selected is a plain array everywhere,other,,,,,
+cityofaustin/janis,acorn,ce18c634b12c258523913af191649d7170154d28,updating yarn,dependencies,,,,,
+codaxy/cxjs,acorn,bb3708e3382b32cb8d1e8e471a094a3bd3056434,Fresh yarn instsall,dependencies,,,,,
+congrea/virtualclass,mixin-deep,46615f1b5a675c8356ccdc14ebe078a371937259,Fix style issues,other,,,,,
+congrea/virtualclass,eslint-utils,5f70deab639a8a061b87f9c3f5e9a41f5a3bb34b,design for  firefox browser,other,,,,,
+ctrlo/GADS,serialize-javascript,bfa6528175ca20221c35dc3e9a300130ef02a701,Update yarn.lock,dependencies,,,,,
+date-fns/date-fns,lodash,451bfcab05f48aed59ae83c0a0effc9046f7399e,,empty,,,,,
+date-fns/date-fns,lodash,451bfcab05f48aed59ae83c0a0effc9046f7399e,,empty,,,,,
+date-fns/date-fns,lodash,451bfcab05f48aed59ae83c0a0effc9046f7399e,,empty,,,,,
+date-fns/date-fns,lodash,451bfcab05f48aed59ae83c0a0effc9046f7399e,,empty,,,,,
+dcos/dcos-website,eslint,1840f961179b5b8af4f524667db00d069f3a406a,Update for 1.12.5 release and security fix,dependencies + security,,,,,
+decred/decrediton,acorn,e2dcd39a6f009f8a9fdcbf0cf4765a15e86f259a,,empty,,,,,
+eBay/ebayui-core,https-proxy-agent,6688b48e4c2d8da139a3e7d6d041d66072795171,"Upgraded https-proxy-agent
+Original PR #1097",dependabot,"If I visit the link, it points to the dependabot PR",,,,
+ebi-webcomponents/nightingale,https-proxy-agent,3e582b8efb44b6152ae0c52d2e4f1e9dd6731936,new component for alignments,other,,,,,
+ebshimizu/stats-of-the-storm,mixin-deep,b898b47a37b2d97985870c722dd748a0f9cf10eb,"readme, package updates",dependencies,,,,,
+ebshimizu/stats-of-the-storm,https-proxy-agent,b898b47a37b2d97985870c722dd748a0f9cf10eb,"readme, package updates",dependencies,,,,,
+eggheadio/how-to-egghead,eslint-utils,632f85f6c1fbe85c7a1501d34a15bbd1292961d6,setup theme-ui and make some visual improvements,other,,,,,
+elastic/apm-agent-rum-js,codecov,6929cb3d461e24a29fa5c1fe91e0e830bd4c6d19,,empty,,,,,
+entrylabs/entry-hw,acorn,9d3b5fe08f4da26f5b5c5126d01dce2a89c1f5a5,"[security] eslint, webpack 버전 업데이트",security,,,,,
+facebook/metro,eslint-utils,fcd01483f505ded1c7a671267a5efb09bf8ecb6b,"New yarn.lock file
+
+Reviewed By: hramos
+
+Differential Revision: D20558089
+
+fbshipit-source-id: 5dd7d5ebfd2507e2b2d353458f1cd70d8aa31c14",dependencies,,,,,
+facebook/metro,mixin-deep,fcd01483f505ded1c7a671267a5efb09bf8ecb6b,"New yarn.lock file
+
+Reviewed By: hramos
+
+Differential Revision: D20558089
+
+fbshipit-source-id: 5dd7d5ebfd2507e2b2d353458f1cd70d8aa31c14",dependencies,,,,,
+facebook/metro,mixin-deep,fcd01483f505ded1c7a671267a5efb09bf8ecb6b,"New yarn.lock file
+
+Reviewed By: hramos
+
+Differential Revision: D20558089
+
+fbshipit-source-id: 5dd7d5ebfd2507e2b2d353458f1cd70d8aa31c14",dependencies,,,,,
+facebook/metro,codecov,c6926a9b259c233ab59e9cd63d528248f74eb610,"Fix security vulnerabilities in third-party dependencies
+
+Summary:
+This upgrades or removes some dependencies that have been known to have security vulnerabilities.
+
+I removed a bunch of scripts that we don't use internally at FB and are leftovers from 2017 when I created the Metro monorepo structure by copying Jest. The watch script isn't useful as we run Metro from source at FB and tests are compiling Metro properly with Jest.
+
+Reviewed By: GijsWeterings
+
+Differential Revision: D20693156
+
+fbshipit-source-id: 4e74df48d24a6e437f003e25189b0f4fa5e2cd2e",dependencies + security,security,,,,
+facebook/metro,acorn,fcd01483f505ded1c7a671267a5efb09bf8ecb6b,"New yarn.lock file
+
+Reviewed By: hramos
+
+Differential Revision: D20558089
+
+fbshipit-source-id: 5dd7d5ebfd2507e2b2d353458f1cd70d8aa31c14",dependencies,,,,,
+facebook/relay,acorn,99765fbc7b1de14c335bf1435b7f8aa8d6952b28,"Bump yarn.lock (#3067)
+
+Summary:
+Deleted the yarn.lock and re-created it by running yarn, should fix some security advisories one of which is ""critical"".
+
+Pull Request resolved: https://github.com/facebook/relay/pull/3067
+
+Test Plan: Wait for OSS CI signal.
+
+Reviewed By: jstejada
+
+Differential Revision: D21223572
+
+Pulled By: kassens
+
+fbshipit-source-id: 648ff00e927b633b357b27cea232d482bffc08ca",security,,,,,
+finos/perspective,lodash,12fa29a19cab1ed7f2e381809e264dfb87affde1,Fix lodash version,dependencies,,,,,
+flussonic/mse-player,acorn,0ec7ee5382654c5054dda9df2b44f32fb81f4555,v20.4.2,other,,,,,
+fortinet/fortigate-autoscale,eslint-utils,053948e1373611f01ceb0b305c9aa5377dc6028a,"regular update for node package security check
+
+Change-Id: Ib603d90c80df3198d48956571111c8d289fa0912",dependencies + security,security,,,,
+fortinet/fortigate-autoscale,eslint-utils,4b1ffa5678d7fd40775b3ef5d42a78ef2c7216a1,"bump version to 2.0.8 (as well as in each modules)
+
+Change-Id: Ief8d2c83da942e16d0a420d8f6f24204093214f6",dependencies,,,,,
+fortinet/fortigate-autoscale,acorn,75fa0cd7c555fc0cd59be41a46c037477cae08cd,"remove aws portion
+
+Change-Id: Id39d400ea619cd452a6668d575a825b25142b328",,dependencies,,,,
+fortinet/fortigate-autoscale,acorn,75fa0cd7c555fc0cd59be41a46c037477cae08cd,"remove aws portion
+
+Change-Id: Id39d400ea619cd452a6668d575a825b25142b328",,dependencies,,,,
+fortinet/fortigate-autoscale,acorn,4b1ffa5678d7fd40775b3ef5d42a78ef2c7216a,"bump version to 2.0.8 (as well as in each modules)
+
+Change-Id: Ief8d2c83da942e16d0a420d8f6f24204093214f6",dependencies,,,,,
+fortinet/fortigate-autoscale,acorn,4b1ffa5678d7fd40775b3ef5d42a78ef2c7216a,"bump version to 2.0.8 (as well as in each modules)
+
+Change-Id: Ief8d2c83da942e16d0a420d8f6f24204093214f6",dependencies,,,,,
+fortinet/fortigate-autoscale,acorn,4b1ffa5678d7fd40775b3ef5d42a78ef2c7216a,"bump version to 2.0.8 (as well as in each modules)
+
+Change-Id: Ief8d2c83da942e16d0a420d8f6f24204093214f6",dependencies,,,,,
+fortinet/fortigate-autoscale,acorn,4b1ffa5678d7fd40775b3ef5d42a78ef2c7216a,"bump version to 2.0.8 (as well as in each modules)
+
+Change-Id: Ief8d2c83da942e16d0a420d8f6f24204093214f6",dependencies,,,,,
+fortinet/fortigate-autoscale,acorn,75fa0cd7c555fc0cd59be41a46c037477cae08cd,"remove aws portion
+
+Change-Id: Id39d400ea619cd452a6668d575a825b25142b328",,dependencies,,,,
+gfxfundamentals/threejsfundamentals,ecstatic,ce8d6c9a9737e68c51d687592d30025237840a24,update deps,dependencies,,,,,
+gfxfundamentals/threejsfundamentals,mixin-deep,ce8d6c9a9737e68c51d687592d30025237840a24,update deps,dependencies,,,,,
+gridsome/gridsome,mixin-deep,1d59cb0364ba5ff7330893d17941cbe370bc726d,chore(deps): update yarn lock,dependencies,,,,,
+grommet/grommet,acorn,ae799c4251476afc3aa8db50b2dc0694b1eb6020,,empty,,,,,
+haiwen/seafile-js,mixin-deep,a9fbf6228bef9576c93a7abc0c05135f5f648309,update dependencies,dependencies,,,,,
+hyperledger/blockchain-explorer,mixin-deep,791db7b86502900ad9fdaf001c8852fd9841d1e8,"[BE-693] Update packages
+
+Change-Id: Iec863ac64d794b0a50ad32b0644011b24f301f55
+Signed-off-by: Ry Jones <ry@linux.com>",dependencies,,,,,
+idena-network/idena-desktop,mixin-deep,452b9d5430f51ba258d5cd4e98acb52be7d5f47c,,empty,,,,,
+ifanrx/hydrogen-js-sdk,axios,ccc6d6574badc59db48ec276e5d8cb4c3f1d3b03,upgrade axios version,dependencies,,,,,
+ifanrx/hydrogen-js-sdk,mixin-deep,1bf8848f4adc7f2775be616f6a6962a2f2e473da,upgrade webpack,dependencies,,,,,
+inaturalist/SeekReactNative,acorn,72f4a496308b8138a20ca3f6d0fa461236eef44c,Switched to @react-native-community/eslint-config lint rules to manage less plugins,other,,,,,
+indsante/Documentation-SNDS,mixin-deep,a9ccf6123333487a3455bc772dcba0c7211a2348,,empty,,,,,
+informatics-isi-edu/ermrestjs,mime,6067e8aa61691c02c2fa18447749da24d1db0aa8,bump version of mime because of security issues with old version,dependencies + security,security,,,,
+inlife/nexrender,mixin-deep,2f7492b46a4015a8fc2654345add6723f81a52f7,"upgraded lerna version, and fixed windows pkg cmd",dependencies,,,,,
+input-output-hk/daedalus,handlebars,ff5caa3cfc80488184fbc780a68441593bff5edf,,empty,,,,,
+inventaire/inventaire,mixin-deep,8963c1ac6ba773fd06c525b2837ba22d6ce46c6d,package: run npm audit fix,security,,,,,
+inventaire/inventaire-client,mixin-deep,fc9d8144ecadccc136d7ef9011c5d50ba09a5b4e,package: run npm audit fix,security,,,,,
+invinst/CPDBv2_frontend,mixin-deep,9c96a98c127836db6124b280c7b9c70f35aff0d9,"Merge pull request #766 from EastAgile/develop
+
+Master deploy 2019-12-05 11:17:39.668729",other,Cannot find PR 766,,,,
+itteco/iframely,diff,204f844cd22e57b7e26ebabf4a73bae95cb9f119,Update yarn.lock,dependencies,,,,,
+jitsi/jitsi-meet,macaddress,fe221fe4be707b8b9a7be083cee646189e41d53f,deps: run npm audit fix,dependencies,,,,,
+jitsi/jitsi-meet,mixin-deep,fe221fe4be707b8b9a7be083cee646189e41d53f,deps: run npm audit fix,dependencies,,,,,
+jitsi/lib-jitsi-meet,mixin-deep,86700791fbb37a9e432464a125b3543a425df020,,empty,,,,,
+joshhunt/destinySets,axios,6aa1ff4e1a16d099092b7929bba225a9b030d382,New mods,other,,,,,
+joyent/sdcadm,eslint,83f580f991850ed7b40b8cd88c48229fbf028728,"TRITON-1946 sdcadm platform needs to be OS aware
+
+TRITON-2092 sdcadm should allow setting Linux as default platform for new CNs. Allow setting boot_platform for unsetup server using sdcadm.",other,,,,,
+kirjavascript/nibblrjr,mixin-deep,68a3c0035ac4e948aa8479268ec4aa8a743e1788,bumped some versions,dependencies,,,,,
+kuzzleio/kuzzle,codecov,35912c3375a863e27df85280eddeff866f44e9a9,dependencies update,dependencies,,,,,
+kyma-project/console,handlebars,e59e0da85b0b9642a51bb3eac033e90b857e66fc,,empty,,,,,
+kyma-project/console,acorn,0171a48562c9a1890649220f616d6299911a525f,,empty,,,,,
+kyma-project/console,acorn,0171a48562c9a1890649220f616d6299911a525f,,empty,,,,,
+kyma-project/console,acorn,0171a48562c9a1890649220f616d6299911a525f,,empty,,,,,
+kyma-project/console,acorn,0171a48562c9a1890649220f616d6299911a525f,,empty,,,,,
+kyma-project/console,https-proxy-agent,7676cf44c9f936eb7c6f7e86e1f97a388e74520d,,empty,,,,,
+kyma-project/console,https-proxy-agent,7676cf44c9f936eb7c6f7e86e1f97a388e74520d,,empty,,,,,
+kyma-project/console,https-proxy-agent,3e307d1147e291d070184ee7c8ac1994ebe9df15,,empty,,,,,
+kyma-project/console,https-proxy-agent,7676cf44c9f936eb7c6f7e86e1f97a388e74520d,,empty,,,,,
+lbryio/lbry-redux,stringstream,06951e90b55db5f9415289f292aaaa8f0650db5d,"Bump js-yaml from 3.11.0 to 3.13.1
+
+Bumps [js-yaml](https://github.com/nodeca/js-yaml) from 3.11.0 to 3.13.1.
+- [Release notes](https://github.com/nodeca/js-yaml/releases)
+- [Changelog](https://github.com/nodeca/js-yaml/blob/master/CHANGELOG.md)
+- [Commits](https://github.com/nodeca/js-yaml/compare/3.11.0...3.13.1)
+
+Signed-off-by: dependabot[bot] <support@github.com>
+Bump extend from 3.0.1 to 3.0.2
+
+Bumps [extend](https://github.com/justmoon/node-extend) from 3.0.1 to 3.0.2.
+- [Release notes](https://github.com/justmoon/node-extend/releases)
+- [Changelog](https://github.com/justmoon/node-extend/blob/master/CHANGELOG.md)
+- [Commits](https://github.com/justmoon/node-extend/compare/v3.0.1...v3.0.2)
+
+Signed-off-by: dependabot[bot] <support@github.com>
+Bump fstream from 1.0.11 to 1.0.12
+
+Bumps [fstream](https://github.com/npm/fstream) from 1.0.11 to 1.0.12.
+- [Release notes](https://github.com/npm/fstream/releases)
+- [Commits](https://github.com/npm/fstream/compare/v1.0.11...v1.0.12)
+
+Signed-off-by: dependabot[bot] <support@github.com>
+Bump stringstream from 0.0.5 to 0.0.6
+
+Bumps [stringstream](https://github.com/mhart/StringStream) from 0.0.5 to 0.0.6.
+- [Release notes](https://github.com/mhart/StringStream/releases)
+- [Commits](https://github.com/mhart/StringStream/compare/v0.0.5...v0.0.6)
+
+Signed-off-by: dependabot[bot] <support@github.com>
+Bump lodash from 4.17.10 to 4.17.15
+
+Bumps [lodash](https://github.com/lodash/lodash) from 4.17.10 to 4.17.15.
+- [Release notes](https://github.com/lodash/lodash/releases)
+- [Commits](https://github.com/lodash/lodash/compare/4.17.10...4.17.15)
+
+Signed-off-by: dependabot[bot] <support@github.com>
+Bump mixin-deep from 1.3.1 to 1.3.2
+
+Bumps [mixin-deep](https://github.com/jonschlinkert/mixin-deep) from 1.3.1 to 1.3.2.
+- [Release notes](https://github.com/jonschlinkert/mixin-deep/releases)
+- [Commits](https://github.com/jonschlinkert/mixin-deep/compare/1.3.1...1.3.2)
+
+Signed-off-by: dependabot[bot] <support@github.com>
+Bump eslint-utils from 1.3.1 to 1.4.3
+
+Bumps [eslint-utils](https://github.com/mysticatea/eslint-utils) from 1.3.1 to 1.4.3.
+- [Release notes](https://github.com/mysticatea/eslint-utils/releases)
+- [Commits](https://github.com/mysticatea/eslint-utils/compare/v1.3.1...v1.4.3)
+
+Signed-off-by: dependabot[bot] <support@github.com>",dependabot,,,,,
+lbryio/lbry-redux,mixin-deep,06951e90b55db5f9415289f292aaaa8f0650db5d,"Bump js-yaml from 3.11.0 to 3.13.1
+
+Bumps [js-yaml](https://github.com/nodeca/js-yaml) from 3.11.0 to 3.13.1.
+- [Release notes](https://github.com/nodeca/js-yaml/releases)
+- [Changelog](https://github.com/nodeca/js-yaml/blob/master/CHANGELOG.md)
+- [Commits](https://github.com/nodeca/js-yaml/compare/3.11.0...3.13.1)
+
+Signed-off-by: dependabot[bot] <support@github.com>
+Bump extend from 3.0.1 to 3.0.2
+
+Bumps [extend](https://github.com/justmoon/node-extend) from 3.0.1 to 3.0.2.
+- [Release notes](https://github.com/justmoon/node-extend/releases)
+- [Changelog](https://github.com/justmoon/node-extend/blob/master/CHANGELOG.md)
+- [Commits](https://github.com/justmoon/node-extend/compare/v3.0.1...v3.0.2)
+
+Signed-off-by: dependabot[bot] <support@github.com>
+Bump fstream from 1.0.11 to 1.0.12
+
+Bumps [fstream](https://github.com/npm/fstream) from 1.0.11 to 1.0.12.
+- [Release notes](https://github.com/npm/fstream/releases)
+- [Commits](https://github.com/npm/fstream/compare/v1.0.11...v1.0.12)
+
+Signed-off-by: dependabot[bot] <support@github.com>
+Bump stringstream from 0.0.5 to 0.0.6
+
+Bumps [stringstream](https://github.com/mhart/StringStream) from 0.0.5 to 0.0.6.
+- [Release notes](https://github.com/mhart/StringStream/releases)
+- [Commits](https://github.com/mhart/StringStream/compare/v0.0.5...v0.0.6)
+
+Signed-off-by: dependabot[bot] <support@github.com>
+Bump lodash from 4.17.10 to 4.17.15
+
+Bumps [lodash](https://github.com/lodash/lodash) from 4.17.10 to 4.17.15.
+- [Release notes](https://github.com/lodash/lodash/releases)
+- [Commits](https://github.com/lodash/lodash/compare/4.17.10...4.17.15)
+
+Signed-off-by: dependabot[bot] <support@github.com>
+Bump mixin-deep from 1.3.1 to 1.3.2
+
+Bumps [mixin-deep](https://github.com/jonschlinkert/mixin-deep) from 1.3.1 to 1.3.2.
+- [Release notes](https://github.com/jonschlinkert/mixin-deep/releases)
+- [Commits](https://github.com/jonschlinkert/mixin-deep/compare/1.3.1...1.3.2)
+
+Signed-off-by: dependabot[bot] <support@github.com>
+Bump eslint-utils from 1.3.1 to 1.4.3
+
+Bumps [eslint-utils](https://github.com/mysticatea/eslint-utils) from 1.3.1 to 1.4.3.
+- [Release notes](https://github.com/mysticatea/eslint-utils/releases)
+- [Commits](https://github.com/mysticatea/eslint-utils/compare/v1.3.1...v1.4.3)
+
+Signed-off-by: dependabot[bot] <support@github.com>",dependabot,,,,,
+lino-framework/react,acorn,e30f9ddee5eec7dc087a611ed87f73e8f1777a40,"New display modes for grid, list and cards",other,,,,,
+lskjs/lskjs,mixin-deep,5bee3a05ac0af3bc2d6dc3c2e789a078d541c05e,chore: update package lock,dependencies,,,,,
+lskjs/lskjs,acorn,e3fcf92b62aaffffaf1ad753b8ab41e26682ce48,chore: update packages,dependencies,,,,,
+lttb/reshadow,https-proxy-agent,a9b2425672c4116cccc8747a3acaac4a9193ae79,deps: update dependencies,dependencies,,,,,
+maidsafe/safenetwork.tech,mixin-deep,1d200552a46101bd9756a2d78b0c20e04be5c7b1,update react-static to v7,dependencies,,,,,
+maidsafe/safenetwork.tech,axios,1d200552a46101bd9756a2d78b0c20e04be5c7b1,update react-static to v7,dependencies,,,,,
+makeomatic/ms-users,acorn,c544d8a4767ed543cd18a2aedab6c2517977d226,feat(restore-pwd): expand 429 error with actual ttl,security,"mentions pwd, aka password, which prompted to do a google search of this error",,"Info from google for error 429: In the case of a brute-force login attempt, in which a hacker repeatedly tries to log into your site, the 429 error code is an important security measure. It sets a rate limit for additional requests, preventing the brute-force attacker from being successful.",,
+mapcentia/vidi,braces,2a3d23efb32b838f683a4915150930f9d12a0f9c,Reports,other,,,,,
+mapcentia/vidi,brace-expansion,3fd98778a231851c7873a40541a30848354d5170,Clean up and upgrade Google Mutant,dependencies,,,,,
+mapcentia/vidi,lodash,3fd98778a231851c7873a40541a30848354d5170,Clean up and upgrade Google Mutant,dependencies,,,,,
+mapcentia/vidi,lodash,3fd98778a231851c7873a40541a30848354d5170,Clean up and upgrade Google Mutant,dependencies,,,,,
+mapcentia/vidi,lodash,3fd98778a231851c7873a40541a30848354d5170,Clean up and upgrade Google Mutant,dependencies,,,,,
+mapcentia/vidi,lodash,3fd98778a231851c7873a40541a30848354d5170,Clean up and upgrade Google Mutant,dependencies,,,,,
+mapcentia/vidi,js-yaml,3fd98778a231851c7873a40541a30848354d5170,Clean up and upgrade Google Mutant,dependencies,,,,,
+mapcentia/vidi,js-yaml,3fd98778a231851c7873a40541a30848354d5170,Clean up and upgrade Google Mutant,dependencies,,,,,
+mapcentia/vidi,debug,3fd98778a231851c7873a40541a30848354d5170,Clean up and upgrade Google Mutant,dependencies,,,,,
+mar10/fancytree,acorn,d797c5cbb9022b07edc176e616b2cedd2f0e3819,npm audit fix,dependencies,,,,,
+maticnetwork/contracts,acorn,bf815184b59e627d35ccb0f386ef12a8d40cf983,Regenerate package-lock,dependencies,,,,,
+microsoft/monaco-editor,acorn,0dd8a9142221d9c954afa6c6a65d83ebb363ae6e,update deps,dependencies,,,,,
+mika-cn/maoxian-web-clipper,acorn,2b807a016809d9f0f73747bb9d06272fbfc8dda8,Upgrade mocha,dependencies,,,,,
+mjmlio/mjml,mixin-deep,736c5b87f2bb482ac53aacbeeecfbab5b9144e00,fix watch nested includes when filePath specified,other,,,,,
+nib-edit/Nib,acorn,5f202477973eae959f582fc4b079d6d9b7b15fe2,Docs upgrade,other,,,,,
+obniz/obniz,mixin-deep,96d23eaf390ff5f609f14c512dcd24510fe712c7,fix security-warning,security,,,,,
+okta/okta-signin-widget,mixin-deep,70ef79f5d06969ded2c785dd7fa46e07a4b86c6d,,empty,,,,,
+okta/okta-signin-widget,eslint-utils,8a169c1add83002cf656188c8e52f01caf5418a2,"fix: eslint to avoid only
+
+OKTA-313084",,dependencies,,,,
+okta/okta-signin-widget,handlebars,3ac34f29f550b886180abb3e6ef525ca237481e1,":fire: Removes old e2e test suites
+
+OKTA-382679
+<<<Jenkins Check-In of Tested SHA: 921e7acb644c8115d0c022be4aead5c080fabcbf for eng_productivity_ci_bot_okta@okta.com>>>
+Artifact: okta-signin-widget
+
+OKTA-366595
+<<<Jenkins Check-In of Tested SHA: 63db9e8224416fb2197234673682e2fe07eb713b for eng_productivity_ci_bot_okta@okta.com>>>
+Artifact: okta-signin-widget",other,,,,,
+okta/okta-signin-widget,https-proxy-agent,70ef79f5d06969ded2c785dd7fa46e07a4b86c6d,,empty,,,,,
+openglobus/openglobus,mixin-deep,69bc9da9fa700f5e46953586b5dd59084cd78048,Replaced build.bat to npm scripts,,dependencies,,,,
+peeranha/peeranha-web,lodash,39a3382171f4035ae7912303e3af9213a7afb49c,,empty,,,,,
+peeranha/peeranha-web,lodash,39a3382171f4035ae7912303e3af9213a7afb49c,,empty,,,,,
+peeranha/peeranha-web,lodash,39a3382171f4035ae7912303e3af9213a7afb49c,,empty,,,,,
+peeranha/peeranha-web,jquery,39a3382171f4035ae7912303e3af9213a7afb49c,,empty,,,,,
+peeranha/peeranha-web,jquery,39a3382171f4035ae7912303e3af9213a7afb49c,,empty,,,,,
+peeranha/peeranha-web,bootstrap,39a3382171f4035ae7912303e3af9213a7afb49c,,empty,,,,,
+pilas-engine/pilas-engine,stringstream,d4b3a37f5edbe5f688facfe00582c1d96e85414a,Creando visor de animaciones actuales y la posibilidad de crear animaciones nuevas y renombrar las existentes.,other,Creating current animations display and the possibility of creating new animations and renaming existing ones.,,,,
+pilas-engine/pilas-engine,mixin-deep,d4b3a37f5edbe5f688facfe00582c1d96e85414a,Creando visor de animaciones actuales y la posibilidad de crear animaciones nuevas y renombrar las existentes.,other,Creating current animations display and the possibility of creating new animations and renaming existing ones.,,,,
+portainer/portainer,eslint-utils,35b52a846e7b31d74f271348bdabcb6af3b69353,,empty,,,,,
+portainer/portainer,mixin-deep,35b52a846e7b31d74f271348bdabcb6af3b69353,,empty,,,,,
+programmfabrik/coffeescript-ui,mixin-deep,4f4c84040476c20cf19aa92051a9a3153de2c381,"Update package.json & package-lock.json after ""npm audit fix"".",dependencies,,,,,
+programmfabrik/coffeescript-ui,mixin-deep,00895f83fe594ca91476a7f7c3c018778fea00e8,DEMO: Added back theme switching.,other,,,,,
+programmfabrik/coffeescript-ui,stringstream,00895f83fe594ca91476a7f7c3c018778fea00e8,DEMO: Added back theme switching.,other,,,,,
+protectwise/troika,acorn,7c989b09f705fe7302fc26e5c49292b238c7c4f6,chore: update build-time dependencies,dependencies,,,,,
+qgis/qwc2-demo-app,acorn,267c81c0147d4949bfbf89ae433544db9d1cba07,Update dependencies,dependencies,,,,,
+rand256/valetudo,mqtt-packet,3a29a2be4f316f5df7b7fcb7bbbe046fdf0d3399,mark a version 0.3.1-RE4,other,,,,,
+rapidpro/rapidpro,react-dom,dbf3b7491447fb73655b2635cdabf1a0de4e41b7,Update some libs for security,dependencies + security,,,,,
+rapidpro/rapidpro,axios,ae3a7dbd556ec7d535967bcba1d9c65891c324aa,Add dependency for temba-components,dependencies,,,,,
+react-navigation/react-navigation.github.io,acorn,713a9a8ad5eb581c29032addabaceb4a5112453c,,empty,,,,,
+rescapes/ramda,eslint-utils,1b377c5aa7a9ca4bd111596ba1a88dc47fa62490,Fixed naming,other,,,,,
+segmentio/evergreen,mixin-deep,98be7f078824d67ba71ec8f7ef48db98114a1ca6,,empty,,,,,
+sehugg/8bitworkshop,acorn,7371b71648078fac50d350c04cf9e2683f380629,npm upgrade,dependencies,,,,,
+sendgrid/docs,mixin-deep,554e8e29fe963b61d5db6c63bb6ac9b8668295da,Update packages & fix seo frontmatter typo,dependencies,,,,,
+shadowsocks/shadowsocks-manager,acorn,deed6cebb45ccfa2c6e74d1b04764947281e4583,autopause,other,,,,,
+silverstripe/silverstripe-admin,mixin-deep,e8ba96f735fbeaa5e6bab029d02975cc2c8a5659,Upgrade dependencies,dependencies,,,,,
+steedos/steedos-platform,acorn,ec986438c9a61810448db36a1802c05cc80f881d,移除 contract app,,dependencies,,,,
+steedos/steedos-platform,https-proxy-agent,d1a36a7487f8ec0c8935584dc9e07a2922efb7d0,升级 yarn.lock,dependencies,升级 = upgrade,,,,
+steemit/condenser,minimist,537702ecdb4cd8e267d9a910d2628db335060c14,communities search,other,,,,,
+stellarterm/stellarterm,braces,62b8a325e7821e8e470f9916afb8ebac64c9eed8,Update yarn lock,dependencies,,,,,
+stellarterm/stellarterm,tar,dcf12240ccad2e178cd50fafde0f5bf89ed89c09,Update yarn lock,dependencies,,,,,
+synzen/MonitoRSS,handlebars,73ac1ee502f5767a07d4c327af34a414722a8a8f,"Replace axios with node-fetch, and add express-validator",dependencies,,,,,
+the-labo/the,acorn,ce6314aeede4bbdf023d80e1f2fd9cea83ec3be2,,empty,,,,,
+thm-projects/arsnova-flashcards,mixin-deep,c0f0fc6d67d455ff04641812a420d18046650e3e,"Resolve ""changing the icon for the full screen setting""",other,,,,,
+thoughtworks/tramchester,acorn,eb84d2718feabf6466e70138c908dc81f0a469e3,npm update for security alerts,dependencies + security,,,,,
+tidepool-org/blip,mixin-deep,0feafde7c15a5a418371d975e580160a2929e73b,WIP codemod work,other,,,,,
+tidepool-org/blip,eslint-utils,0feafde7c15a5a418371d975e580160a2929e73b,WIP codemod work,other,,,,,
+tillhub/schemas,axios,85b41c6930ae97093cc6a954560c14880d247c96,fix(packages): update firebase dep,dependencies,,,,,
+tinode/webapp,acorn,475e5eb3e739bf666599ad21854be1b6f975bc7d,dependencies updated,dependencies,,,,,
+topcoder-platform/community-app,serialize-javascript,0437b681647fbeb47929324759fa81304b3b473d,Fix #4061,other,,,,,
+uwcirg/tb-mobile-app,mixin-deep,a344ad02e2f425bc973b6273973a09f8f66643ca,Upgrade packages,dependencies,,,,,
+vanda/vam-fractal,stringstream,233c1de04c1a708f647a977848f3857323ba903c,update,dependencies,,,,,
+vanda/vam-fractal,mixin-deep,233c1de04c1a708f647a977848f3857323ba903c,update,dependencies,,,,,
+viewstools/morph,acorn,c0ff1c9c7dfc2c87ce672a572ba7dd9aa8ed9cee,feat: support when <isFlow,other,,,,,
+webpack/webpack.js.org,minimist,eb48677d3dec74b8fafd551dc01154ebc6153147,,empty,,,,,
+webpack/webpack.js.org,minimist,22dcb8a1ce7e2a1b02aa4cd6c99af0a69fba2ea7,chore(app): Fixed security issue,security,,,,,
+wesbos/Syntax,acorn,defaff5deec53fbc5fdc8d14f9916898a437c2de,remove yarn,dependencies,,,,,
+wfp/ui,acorn,d61f143d15d615a2e5bfaa59cdeaafe23d29d39b,feat(Dependencies): update all dependencies to the latest version,dependencies,,,,,
+wikimedia/mediawiki-extensions-Popups,mixin-deep,189b386a131815985ec9dcb7b7f2b6d7b25d4f5c,"Publish storybook now we are using more modern node
+
+Breaking change - I was having issues getting the knobs feature
+to work so it has been removed for the time being.
+
+Bug: T236589
+Depends-On: I8505d2dad69aefed5f8ed1f599b3ca1b7e79acf5
+Change-Id: I42fbf37124477e2d950b4bca15acf77703cd3f5d",,dependencies,,,,
+wordpress-mobile/gutenberg-mobile,mixin-deep,c5d4c7ded8593439f241a2fcf58af7e58198316d,,empty,,,,,
+wulkano/Kap,mixin-deep,2f2b56e3fe67105250bede321f7fa97119792f29,,empty,,,,,
+xizon/uix-kit,acorn,0f748e6d2af067fc44793daa53d966267147fc43,"security: potential security vulnerability found in the minimist dependency
+
+- acorn
+- minimist",dependencies + security,,,,,
+zenmoney/ZenPlugins,no-case,b9af5e3928df886ee210c845c8d782ee14b512e1,"update webpack, standard JS and other dependencies",dependencies,,,,,

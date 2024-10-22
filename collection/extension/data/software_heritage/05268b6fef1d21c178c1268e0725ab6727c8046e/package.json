@@ -1,0 +1,116 @@
+{
+  "private": true,
+  "license": "Apache-2.0",
+  "repository": "https://github.com/netflix/pollyjs",
+  "contributors": [
+    {
+      "name": "Jason Mitchell",
+      "email": "jason.mitchell.w@gmail.com"
+    },
+    {
+      "name": "Offir Golan",
+      "email": "offirgolan@gmail.com"
+    }
+  ],
+  "workspaces": [
+    "packages/@pollyjs/*"
+  ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "lint-staged": {
+    "linters": {
+      "*.js": [
+        "eslint --fix",
+        "git add"
+      ],
+      "*.{json,md,html,yml,css}": [
+        "prettier --ignore-path .eslintignore --write",
+        "git add"
+      ]
+    },
+    "globOptions": {
+      "dot": true
+    }
+  },
+  "scripts": {
+    "build": "lerna run build --ignore=@pollyjs/ember --parallel",
+    "build:prod": "NODE_ENV=production yarn build && NODE_ENV=production MINIFY=true yarn build",
+    "prewatch": "yarn server:build",
+    "watch": "lerna run watch-all --parallel",
+    "test:check": "./scripts/require-test-build.sh",
+    "clean": "rimraf packages/@pollyjs/*/dist && rimraf packages/@pollyjs/*/dist",
+    "lint": "eslint .",
+    "lint:fix": "yarn run lint --fix",
+    "postlint:fix": "prettier --ignore-path .eslintignore --write \"**/*.{json,md,html,yml,css}\"",
+    "pretest:ci": " yarn clean && yarn server:build && yarn build && yarn test:build",
+    "pretest": "yarn test:check",
+    "test": "yarn test:ci",
+    "test:watch": "testem",
+    "test:ci": "testem ci",
+    "test:build": "lerna run test:build --parallel",
+    "test:node": "mocha --opts tests/mocha.opts",
+    "test:jest": "jest",
+    "test:ember": "lerna run test --stream --no-prefix --scope=@pollyjs/ember",
+    "server:build": "lerna run build --scope=@pollyjs/node-server --scope=@pollyjs/utils",
+    "docs:serve": "docsify serve ./docs",
+    "docs:publish": "gh-pages --dist docs --dotfiles --message 'chore: Publish docs'",
+    "release": "npm-run-all \"release:version {@}\" release:publish --",
+    "release:version": "lerna version",
+    "prerelease:publish": "npm-run-all clean build:prod",
+    "release:publish": "lerna publish from-git",
+    "postrelease:publish": "yarn docs:publish",
+    "contributors": "npx contributor-faces -e '*\\[bot\\]'"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/plugin-external-helpers": "^7.2.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.4.4",
+    "@babel/plugin-transform-runtime": "^7.4.4",
+    "@babel/preset-env": "^7.4.5",
+    "@babel/runtime": "^7.4.5",
+    "@babel/runtime-corejs2": "^7.4.5",
+    "@commitlint/cli": "^8.0.0",
+    "@commitlint/config-conventional": "^8.0.0",
+    "@commitlint/config-lerna-scopes": "^8.0.0",
+    "@commitlint/travis-cli": "^8.0.0",
+    "chai": "^4.2.0",
+    "compression": "^1.7.4",
+    "contributor-faces": "^1.0.2",
+    "deepmerge": "^3.2.0",
+    "docsify-cli": "^4.3.0",
+    "eslint": "^5.16.0",
+    "eslint-config-prettier": "^4.3.0",
+    "eslint-plugin-import": "^2.18.0",
+    "eslint-plugin-node": "^9.1.0",
+    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-react": "^7.14.2",
+    "formdata-polyfill": "^3.0.18",
+    "gh-pages": "^2.0.1",
+    "har-validator": "^5.1.3",
+    "husky": "^2.4.0",
+    "jest": "^24.8.0",
+    "jest-tap-reporter": "^1.9.0",
+    "lerna": "^3.15.0",
+    "lerna-alias": "^3.0.2",
+    "lint-staged": "^8.2.0",
+    "mocha": "^6.1.4",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^1.18.2",
+    "rimraf": "^2.6.3",
+    "rollup": "^1.14.6",
+    "rollup-plugin-alias": "^1.5.2",
+    "rollup-plugin-babel": "^4.3.2",
+    "rollup-plugin-commonjs": "^10.0.0",
+    "rollup-plugin-json": "^4.0.0",
+    "rollup-plugin-multi-entry": "^2.1.0",
+    "rollup-plugin-node-builtins": "^2.1.2",
+    "rollup-plugin-node-globals": "^1.4.0",
+    "rollup-plugin-node-resolve": "^5.0.1",
+    "rollup-plugin-terser": "5.0.0",
+    "testem": "^2.16.0"
+  }
+}

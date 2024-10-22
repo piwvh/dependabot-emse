@@ -1,0 +1,23 @@
+{
+  "license": "Apache-2.0",
+  "dependencies": {
+    "moment": "^2.24.0",
+    "mongodb": "^3.2.7",
+    "puppeteer": "^1.19.0",
+    "request": "^2.88.0"
+  },
+  "devDependencies": {
+    "codecov": "^3.5.0",
+    "eslint": "^5.16.0",
+    "jest": "^24.8.0",
+    "nock": "^10.0.6"
+  },
+  "scripts": {
+    "test": "jest --verbose --runInBand --detectOpenHandles",
+    "lint": "eslint"
+  },
+  "jest": {
+    "coverageDirectory": "./coverage/",
+    "collectCoverage": true
+  }
+}

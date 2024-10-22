@@ -1,0 +1,48 @@
+{
+	"name": "@bitsy/hecks",
+	"description": "a collection of re-usable scripts for bitsy game maker",
+	"keywords": [
+		"bitsy",
+		"hacks"
+	],
+	"main": "index.mjs",
+	"version": "4.4.4",
+	"scripts": {
+		"build": "node --experimental-modules cli.mjs",
+		"test": "jest --runInBand",
+		"prepare": "npm run build"
+	},
+	"author": "Sean S. LeBlanc <sean.s.leblanc@gmail.com>",
+	"license": "MIT (individual hacks have their own license specified)",
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/seleb/bitsy-hacks.git"
+	},
+	"dependencies": {
+		"array-flat-polyfill": "^1.0.1",
+		"babylonjs": "^4.0.3",
+		"input-gamepads.js": "^2.0.2",
+		"omggif": "^1.0.9",
+		"rollup": "^0.56.5",
+		"rollup-plugin-commonjs": "^9.3.4",
+		"rollup-plugin-node-resolve": "^3.4.0",
+		"tracery-grammar": "^2.7.4",
+		"webglazy": "^3.0.0"
+	},
+	"devDependencies": {
+		"@babel/plugin-transform-runtime": "^7.4.4",
+		"@babel/preset-env": "^7.4.4",
+		"@babel/runtime": "^7.4.4",
+		"doctrine": "^3.0.0",
+		"jest": "^24.7.1",
+		"jest-image-snapshot": "^2.8.1",
+		"puppeteer": "^1.15.0",
+		"rollup-plugin-eslint": "^4.0.0"
+	},
+	"jest": {
+		"testEnvironment": "node",
+		"setupFilesAfterEnv": [
+			"<rootDir>/src/test/setupTests.js"
+		]
+	}
+}

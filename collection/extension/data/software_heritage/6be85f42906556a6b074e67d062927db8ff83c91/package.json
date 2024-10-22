@@ -1,0 +1,78 @@
+{
+  "name": "the",
+  "description": "root for the-project",
+  "version": "15.4.12",
+  "author": {
+    "name": "Taka Okunishi",
+    "email": "okunishinishi@gmail.com",
+    "url": "http://okunishitaka.com"
+  },
+  "bugs": {
+    "url": "https://github.com/the-labo/the#issues"
+  },
+  "dependencies": {
+    "asfs": "^2.2.3",
+    "pon": "^5.2.15",
+    "pon-task-basic": "^4.2.21"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.7.4",
+    "@babel/plugin-proposal-class-properties": "^7.7.4",
+    "@babel/plugin-proposal-do-expressions": "^7.7.4",
+    "@babel/plugin-proposal-object-rest-spread": "^7.7.4",
+    "@babel/plugin-proposal-optional-chaining": "^7.7.4",
+    "@babel/plugin-transform-runtime": "^7.7.4",
+    "@babel/polyfill": "^7.7.0",
+    "@babel/preset-env": "^7.7.4",
+    "@babel/preset-react": "^7.7.4",
+    "@babel/runtime": "^7.7.4",
+    "@the-/code": "^15.12.1",
+    "@the-/eslint-config-code": "^15.5.0",
+    "@the-/eslint-config-jsdoc": "^15.4.15",
+    "@the-/eslint-config-prettier": "^15.5.0",
+    "@the-/eslint-config-react": "^15.5.0",
+    "@the-/eslint-config-standard": "^15.5.2",
+    "@the-/eslint-config-standard-jsx": "^15.5.2",
+    "@the-/refactor": "^15.6.0",
+    "@the-/script-build": "^15.4.51",
+    "@the-/script-doc": "^15.4.11",
+    "@the-/script-test": "^15.4.11",
+    "@the-/templates": "^16.2.9",
+    "@the-/util-file": "^15.5.2",
+    "aglob": "^3.0.2",
+    "babel-eslint": "^10.0.3",
+    "coz": "^7.0.19",
+    "eslint": "^6.7.2",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsdoc": "^15.12.2",
+    "eslint-plugin-json-light": "^1.0.3",
+    "eslint-plugin-node": "^10.0.0",
+    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "^7.17.0",
+    "eslint-plugin-react-hooks": "^2.3.0",
+    "eslint-plugin-standard": "^4.0.1",
+    "npm-install-if-needed": "^1.0.14",
+    "pon-task-dev": "^1.0.15",
+    "prettier": "^1.19.1",
+    "publish-if-needed": "^1.1.0",
+    "rimraf": "^3.0.0",
+    "semver": "^6.3.0"
+  },
+  "engines": {
+    "node": ">=10",
+    "npm": ">=6"
+  },
+  "homepage": "https://github.com/the-labo/the#readme",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": "the-labo/the",
+  "scripts": {
+    "build": "pon build",
+    "prepare": "pon prepare",
+    "publish": "pon publish",
+    "test": "pon test"
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "name": "babel.github.io",
+  "private": true,
+  "version": "1.0.0",
+  "description": "",
+  "main": "",
+  "scripts": {
+    "bootstrap": "run-s bootstrap:sponsors build",
+    "bootstrap:sponsors": "node ./scripts/download-sponsors.js",
+    "build": "run-s build:repl build:docusaurus build:redirects",
+    "build:docusaurus": "cd website && yarn && yarn build",
+    "build:redirects": "cpy ./_redirects ./website/build/babel",
+    "build:repl": "cross-env NODE_ENV=production webpack",
+    "checkdocs": "node ./scripts/checkdocs.js",
+    "flow": "flow",
+    "lint": "eslint js website",
+    "lint-staged": "lint-staged",
+    "fix:css": "prettier --write website/static/css/*.css",
+    "precommit": "run-s flow lint-staged checkdocs",
+    "start": "run-p start:repl start:docusaurus",
+    "start:docusaurus": "cd website && yarn start",
+    "start:repl": "webpack -d -w",
+    "test": "remark docs README.md --quiet"
+  },
+  "remarkConfig": {
+    "plugins": {
+      "preset-lint-recommended": true,
+      "lint-list-item-indent": false,
+      "lint-no-blockquote-without-caret": false,
+      "lint-no-inline-padding": false,
+      "lint-no-literal-urls": false,
+      "lint-no-duplicate-headings-in-section": true,
+      "lint-no-empty-url": true,
+      "lint-list-item-bullet-indent": false
+    }
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.4.4",
+    "@babel/plugin-proposal-class-properties": "^7.4.4",
+    "@babel/preset-env": "^7.4.4",
+    "@babel/preset-flow": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
+    "async": "^2.5.0",
+    "babel-eslint": "^10.0.1",
+    "babel-loader": "^8.0.5",
+    "babel-plugin-emotion": "^9.1.2",
+    "chalk": "^2.4.1",
+    "cpy-cli": "^2.0.0",
+    "cross-env": "^5.2.0",
+    "eslint": "^5.16.0",
+    "eslint-config-babel": "^9.0.0",
+    "eslint-config-prettier": "^4.2.0",
+    "eslint-plugin-flowtype": "^3.8.1",
+    "eslint-plugin-markdown": "^1.0.0-beta.3",
+    "eslint-plugin-prettier": "^3.0.1",
+    "eslint-plugin-react": "7.13.0",
+    "flow-bin": "^0.98.1",
+    "husky": "^0.14.3",
+    "lint-staged": "^4.2.3",
+    "node-fetch": "^1.7.1",
+    "npm-run-all": "^4.1.3",
+    "prettier": "1.17.0",
+    "remark-cli": "^3.0.0",
+    "remark-lint-list-item-indent": "^1.0.0",
+    "remark-lint-no-blockquote-without-caret": "^1.0.0",
+    "remark-lint-no-duplicate-headings-in-section": "^1.0.0",
+    "remark-lint-no-empty-url": "^1.0.0",
+    "remark-lint-no-literal-urls": "^1.0.0",
+    "remark-preset-lint-recommended": "^2.0.0",
+    "staged-git-files": "^1.1.1",
+    "webpack": "^4.8.2",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.4"
+  },
+  "dependencies": {
+    "@babel/generator": "^7.4.4",
+    "codemirror": "5.49.2",
+    "core-js": "^3.0.1",
+    "emotion": "^9.1.3",
+    "lodash.camelcase": "^4.3.0",
+    "lodash.debounce": "^4.0.8",
+    "lz-string": "^1.4.4",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "react-instantsearch": "^5.1.0",
+    "regenerator-runtime": "^0.13.1",
+    "semver": "^5.4.1",
+    "unfetch": "^3.0.0",
+    "worker-loader": "^2.0.0"
+  },
+  "lint-staged": {
+    "js/**/*.js": [
+      "eslint --format=codeframe --fix",
+      "git add"
+    ],
+    "website/pages/en/*.js": [
+      "eslint --format=codeframe --fix",
+      "git add"
+    ],
+    "website/data/*.js": [
+      "eslint --format=codeframe --fix",
+      "git add"
+    ]
+  }
+}

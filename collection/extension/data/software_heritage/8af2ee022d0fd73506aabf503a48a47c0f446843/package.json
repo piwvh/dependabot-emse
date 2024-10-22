@@ -1,0 +1,51 @@
+{
+  "name": "root",
+  "private": true,
+  "scripts": {
+    "bootstrap": "lerna bootstrap",
+    "prewatch": "npm run bootstrap",
+    "lint": "lerna exec --ignore nightingale-showcase-app --parallel -- eslint -c ../../.eslintrc.json src/**/*.js",
+    "build": "lerna exec --ignore nightingale-showcase-app --parallel -- webpack --config ../../webpack.config.js --mode=production",
+    "watch": "lerna exec --ignore nightingale-showcase-app --parallel -- webpack --config ../../webpack.config.js --mode=development -w",
+    "clean": "lerna exec --ignore nightingale-showcase-app --parallel -- rimraf .jshint .eslint",
+    "link-all": "lerna exec --ignore nightingale-showcase-app --parallel yarn link",
+    "start": "lerna run start --stream",
+    "build-site": "lerna run build-site --stream",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "@babel/core": "7.5.5",
+    "@babel/plugin-proposal-class-properties": "7.5.5",
+    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
+    "@babel/plugin-transform-runtime": "7.5.5",
+    "@babel/preset-env": "7.5.5",
+    "@babel/runtime": "7.5.5",
+    "@webcomponents/webcomponentsjs": "^2.1.3",
+    "babel-loader": "^8.0.5",
+    "browser-sync": "^2.26.3",
+    "camelcase": "^5.0.0",
+    "clean-webpack-plugin": "^3.0.0",
+    "eslint": "^6.6.0",
+    "husky": "^3.0.1",
+    "jest": "^24.3.1",
+    "lerna": "^3.3.2",
+    "prettier": "1.18.2",
+    "pretty-quick": "1.11.1",
+    "webpack": "4.37.0",
+    "webpack-cli": "3.3.6"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  },
+  "jest": {
+    "transformIgnorePatterns": [
+      "/!node_modules\\/lodash-es/"
+    ]
+  },
+  "workspaces": [
+    "app",
+    "packages/*"
+  ]
+}

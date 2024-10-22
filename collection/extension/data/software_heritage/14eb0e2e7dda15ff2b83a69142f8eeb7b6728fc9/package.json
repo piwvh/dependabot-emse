@@ -1,0 +1,177 @@
+{
+  "name": "carbon",
+  "private": true,
+  "version": "0.0.0",
+  "repository": "git@github.com:carbon-design-system/carbon.git",
+  "license": "Apache-2.0",
+  "engines": {
+    "node": "10.x"
+  },
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ],
+    "nohoist": []
+  },
+  "scripts": {
+    "build": "lerna run build --stream --prefix --npm-client yarn",
+    "ci-check": "carbon-cli ci-check",
+    "clean": "lerna run clean && lerna clean --yes && rimraf node_modules",
+    "doctoc": "doctoc --title '## Table of Contents' docs",
+    "format": "prettier --write '**/*.{js,md,scss,ts}' '!**/{build,es,lib,storybook,ts,umd}/**'",
+    "format:diff": "prettier --list-different '**/*.{js,md,scss,ts}' '!**/{build,es,lib,storybook,ts,umd,components}/**'",
+    "lint": "eslint packages",
+    "lint:styles": "stylelint '**/*.{css,scss}' --config ./packages/stylelint-config-elements",
+    "sync": "carbon-cli sync",
+    "test": "cross-env BABEL_ENV=test jest",
+    "test:e2e": "cross-env BABEL_ENV=test jest --testPathPattern=e2e --testPathIgnorePatterns='examples,/packages/components/,/packages/react/'"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.4",
+    "@babel/plugin-proposal-class-properties": "^7.4.4",
+    "@babel/plugin-proposal-export-default-from": "^7.2.0",
+    "@babel/plugin-proposal-export-namespace-from": "^7.2.0",
+    "@babel/plugin-transform-runtime": "^7.4.4",
+    "@babel/preset-env": "^7.4.4",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/runtime": "^7.4.4",
+    "@carbon/cli": "10.3.0",
+    "@commitlint/cli": "^7.5.2",
+    "@commitlint/config-conventional": "^7.5.0",
+    "babel-jest": "^24.8.0",
+    "cross-env": "^5.2.0",
+    "cross-spawn": "^6.0.5",
+    "doctoc": "^1.4.0",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
+    "enzyme-to-json": "^3.3.5",
+    "eslint": "^6.0.0",
+    "eslint-config-carbon": "10.3.0",
+    "fs-extra": "^7.0.1",
+    "glob": "^7.1.4",
+    "husky": "^2.1.0",
+    "jest": "^24.8.0",
+    "jest-circus": "^24.8.0",
+    "jest-junit": "^6.4.0",
+    "lerna": "^3.13.4",
+    "lint-staged": "^8.1.5",
+    "prettier": "^1.17.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "rimraf": "^2.6.3",
+    "stylelint": "^10.0.1"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -e $HUSKY_GIT_PARAMS",
+      "pre-commit": "lint-staged"
+    }
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ],
+    "rules": {
+      "header-max-length": [
+        2,
+        "always",
+        72
+      ],
+      "body-max-line-length": [
+        2,
+        "always",
+        80
+      ],
+      "scope-case": [
+        0,
+        "always",
+        "lower-case"
+      ]
+    }
+  },
+  "lint-staged": {
+    "**/*.js": [
+      "prettier --write",
+      "eslint",
+      "git add"
+    ],
+    "packages/components/**/*.scss": [
+      "prettier --write",
+      "git add"
+    ],
+    "*.md": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "eslintConfig": {
+    "extends": [
+      "eslint-config-carbon"
+    ]
+  },
+  "prettier": {
+    "jsxBracketSameLine": true,
+    "printWidth": 80,
+    "singleQuote": true,
+    "trailingComma": "es5",
+    "proseWrap": "always"
+  },
+  "stylelint": {
+    "extends": [
+      "./packages/stylelint-config-elements"
+    ]
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "packages/**/src/**/*.js",
+      "!packages/{bundler,cli,components,sketch}/**",
+      "!packages/**/{examples,stories}/**",
+      "!**/*-story.js"
+    ],
+    "moduleFileExtensions": [
+      "js",
+      "json"
+    ],
+    "reporters": [
+      "default",
+      "jest-junit"
+    ],
+    "setupFiles": [
+      "./tasks/jest/setup.js"
+    ],
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ],
+    "testMatch": [
+      "<rootDir>/**/__tests__/**/*.js?(x)",
+      "<rootDir>/**/?(*.)(spec|test).js?(x)",
+      "<rootDir>/**/?(*-)(spec|test).js?(x)"
+    ],
+    "transform": {
+      "^.+\\.(js|jsx)$": "./tasks/jest/jsTransform.js",
+      "^.+\\.css$": "./tasks/jest/cssTransform.js",
+      "^(?!.*\\.(js|jsx|css|json)$)": "./tasks/jest/fileTransform.js"
+    },
+    "testRunner": "jest-circus/runner",
+    "testPathIgnorePatterns": [
+      "/cjs/",
+      "/dist/",
+      "/es/",
+      "/lib/",
+      "e2e",
+      "examples",
+      "/umd/"
+    ],
+    "transformIgnorePatterns": [
+      "[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"
+    ],
+    "watchPathIgnorePatterns": [
+      "/cjs/",
+      "/dist/",
+      "/es/",
+      "/examples/",
+      "/lib/",
+      "/storybook/"
+    ]
+  }
+}

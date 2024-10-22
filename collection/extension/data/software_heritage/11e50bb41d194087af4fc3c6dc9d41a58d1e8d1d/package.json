@@ -1,0 +1,30 @@
+{
+  "private": true,
+  "scripts": {
+    "releaseNext": "lerna publish prerelease --preid beta --dist-tag next",
+    "release": "lerna publish",
+    "releaseForce": "lerna publish --force-publish react-static",
+    "build": "lerna run 'build'",
+    "watch": "lerna run 'watch' --parallel",
+    "start": "yarn watch",
+    "startDocs": "cd www && yarn && yarn start",
+    "buildDocs": "cd www && yarn && yarn build",
+    "serveDocs": "serve www/dist -p 3000",
+    "test": "yarn format && lerna run test",
+    "format": "prettier docs/** --write && lerna run format --stream",
+    "precommit": "yarn format && git add",
+    "ci": "yarn build && yarn test"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn precommit"
+    }
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "husky": "^2.5.0",
+    "lerna": "^3.6.0"
+  }
+}

@@ -1,0 +1,127 @@
+{
+  "name": "idena-desktop",
+  "productName": "Idena",
+  "version": "0.0.1",
+  "main": "main/index.js",
+  "repository": "idena-network/idena-desktop",
+  "scripts": {
+    "start": "electron .",
+    "build": "next build renderer && next export renderer",
+    "dist": "npm run build && electron-builder",
+    "dist:win": "npm run build && electron-builder --win --publish onTag",
+    "dist:mac": "npm run build && electron-builder --mac --publish onTag",
+    "dist:linux": "npm run build && electron-builder --linux --publish onTag",
+    "pack": "npm run build && electron-builder --dir",
+    "clean": "rm -rf renderer/out dist",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "test": "jest",
+    "i18n": "npm run i18n:clean && npm run i18n:scan",
+    "i18n:scan": "i18next-scanner",
+    "i18n:clean": "rm -rf locales/en locales/fr locales/de locales/es locales/ru locales/zh locales/ko locales/hr locales/hi locales/ro locales/uk locales/sr locales/it locales/pt locales/si",
+    "e2e": "dotenv -e .env.e2e testcafe electron"
+  },
+  "build": {
+    "appId": "io.idena",
+    "artifactName": "idena-client-${os}-${version}.${ext}",
+    "files": [
+      "**/*",
+      "!renderer",
+      "renderer/out"
+    ],
+    "win": {
+      "publish": [
+        "github"
+      ],
+      "icon": "main/static/icons/icon_512_2x.ico"
+    },
+    "mac": {
+      "publish": [
+        "github"
+      ],
+      "icon": "main/static/icons/icon-512@2x.icns"
+    },
+    "linux": {
+      "target": [
+        "deb"
+      ],
+      "publish": [
+        "github"
+      ],
+      "icon": "main/static/icons/icon-512@2x.icns",
+      "maintainer": "Idena <info@idena.io> (https://idena.io/)"
+    }
+  },
+  "devDependencies": {
+    "@babel/core": "^7.6.0",
+    "@testing-library/react": "^9.1.4",
+    "babel-eslint": "^10.0.1",
+    "babel-jest": "^24.9.0",
+    "cors": "^2.8.5",
+    "devtron": "^1.4.0",
+    "dotenv-cli": "^3.1.0",
+    "electron": "^8.0.1",
+    "electron-builder": "^21.2.0",
+    "eslint": "^5.14.1",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-prettier": "^4.1.0",
+    "eslint-config-wesbos": "0.0.19",
+    "eslint-plugin-html": "^5.0.3",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-prettier": "^3.0.1",
+    "eslint-plugin-react": "^7.12.4",
+    "eslint-plugin-react-hooks": "^1.6.0",
+    "eslint-plugin-testcafe": "^0.2.1",
+    "i18next-scanner": "^2.10.3",
+    "jest": "^24.9.0",
+    "prettier": "^1.16.4",
+    "react-dom": "^16.8.4",
+    "testcafe": "^1.8.2",
+    "testcafe-browser-provider-electron": "0.0.14",
+    "testcafe-react-selectors": "^4.0.0"
+  },
+  "dependencies": {
+    "@toast-ui/react-image-editor": "^1.2.0",
+    "@xstate/react": "^0.8.1",
+    "axios": "^0.18.1",
+    "dayjs": "^1.8.14",
+    "dequal": "^1.0.0",
+    "electron-is-dev": "^1.0.1",
+    "electron-next": "^3.1.5",
+    "electron-store": "^3.2.0",
+    "electron-updater": "^4.0.14",
+    "express": "^4.17.0",
+    "follow-redirects": "^1.9.0",
+    "fs-extra": "^8.1.0",
+    "i18next": "^19.0.1",
+    "jimp": "^0.9.6",
+    "lowdb": "^1.0.0",
+    "mousetrap": "^1.6.3",
+    "nanoid": "^2.0.1",
+    "next": "^9.2.1",
+    "nprogress": "^0.2.0",
+    "pino": "^5.13.2",
+    "polished": "^3.3.0",
+    "progress-stream": "^2.0.0",
+    "prop-types": "^15.6.2",
+    "qrcode.react": "^0.9.3",
+    "react": "^16.8.4",
+    "react-beautiful-dnd": "^10.0.4",
+    "react-i18next": "^11.2.5",
+    "react-icons": "^3.7.0",
+    "reverse-line-reader": "^0.2.6",
+    "rlp": "^2.2.2",
+    "semver": "^6.3.0",
+    "styled-jsx": "^3.2.2",
+    "tree-kill": "^1.2.2",
+    "use-deep-compare-effect": "^1.2.0",
+    "xstate": "^4.7.6"
+  },
+  "prettier": {
+    "trailingComma": "es5",
+    "semi": false,
+    "singleQuote": true,
+    "bracketSpacing": false
+  }
+}

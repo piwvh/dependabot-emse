@@ -1,0 +1,46 @@
+{
+  "name": "device-identification-data",
+  "version": "0.0.0",
+  "description": "Device Identification Data for TVs",
+  "devDependencies": {
+    "colors": "^1.1.2",
+    "csv": "^1.1.1",
+    "glob": "^7.1.1",
+    "joi": "^10.2.2",
+    "melanite": "^1.0.0",
+    "node-fetch": "^1.6.3",
+    "pre-commit": "^1.2.2",
+    "pre-push": "^0.1.1",
+    "promise-path": "^1.2.6",
+    "prompt": "^1.0.0",
+    "standard": "^9.0.0",
+    "tvp-apache2-license-checker": "^1.0.2",
+    "yargs": "^7.0.1"
+  },
+  "scripts": {
+    "lint": "standard",
+    "test:matcher": "npm run build && node ./tests/matcher-validation",
+    "test:schema": "npm run build && node ./tests/schema-validation",
+    "test": "npm run build && node ./tests/schema-validation && node ./tests/matcher-validation && npm run lint",
+    "build": "./scripts/build.sh",
+    "release-to-live": "npm test && ./scripts/deploy.sh",
+    "check-licenses": "tvp-apache2-license-checker",
+    "create": "node ./scripts/create-new-matcher.js || true"
+  },
+  "pre-commit": [
+    "lint"
+  ],
+  "pre-push": [
+    "test"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bbc/device-identification-data.git"
+  },
+  "author": "BBC",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/bbc/device-identification-data/issues"
+  },
+  "homepage": "https://github.com/bbc/device-identification-data#readme"
+}

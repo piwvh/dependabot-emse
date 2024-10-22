@@ -1,0 +1,283 @@
+{
+  "name": "decrediton",
+  "productName": "Decrediton",
+  "version": "1.6.0-pre",
+  "description": "Decrediton based on React, React Router, Webpack, React Hot Loader for rapid application development",
+  "main": "main.js",
+  "scripts": {
+    "test": "cross-env NODE_ENV=test jest",
+    "test-watch": "npm test -- --watch",
+    "test-e2e": "cross-env NODE_ENV=test BABEL_DISABLE_CACHE=1 mocha --retries 2 --compilers js:@babel/register --require ./test/setup.js ./test/e2e.js",
+    "lint": "./node_modules/.bin/eslint app scripts *.js && ./node_modules/.bin/stylelint app/style/*.less",
+    "lint-fix": "./node_modules/.bin/eslint app scripts *.js --fix && ./node_modules/.bin/stylelint app/style/*.less --fix",
+    "hot-server": "cross-env NODE_ENV=development node --max_old_space_size=4096 -r @babel/register server.js",
+    "build-main": "cross-env NODE_ENV=production node -r @babel/register ./node_modules/webpack/bin/webpack --config webpack.config.electron.js --progress --profile --colors",
+    "build-renderer": "cross-env NODE_ENV=production node -r @babel/register ./node_modules/webpack/bin/webpack --config webpack.config.production.js --progress --profile --colors",
+    "build": "npm run build-main && npm run build-renderer",
+    "rebuild-natives": "cd app && ../node_modules/.bin/electron-rebuild",
+    "start": "cross-env NODE_ENV=production electron ./app/ --debug --custombinpath=./bin",
+    "start-hot": "cross-env HOT=1 NODE_ENV=development electron -r @babel/register -r @babel/polyfill ./app/main.development",
+    "start-hot-nosandbox": "cross-env HOT=1 NODE_ENV=development electron -r @babel/register -r @babel/polyfill ./app/main.development -r --no-sandbox",
+    "postinstall": "concurrently \"electron-builder install-app-deps\" \"node node_modules/fbjs-scripts/node/check-dev-engines.js package.json\"",
+    "dev": "npm run hot-server -- --start-hot",
+    "dev-nosandbox": "npm run hot-server -- --start-hot-nosandbox",
+    "package": "npm run build && ./node_modules/.bin/electron-builder build --publish never",
+    "package-win": "npm run build && ./node_modules/.bin/electron-builder build --win --x64 --ia32",
+    "package-linux": "npm run build && ./node_modules/.bin/electron-builder build --linux",
+    "package-mac": "npm run build && ./node_modules/.bin/electron-builder build --mac",
+    "package-all": "npm run build && ./node_modules/.bin/electron-builder build -mwl",
+    "package-dev-linux": "npm run build && ./node_modules/.bin/electron-builder build --linux tar.gz",
+    "cleanup": "mop -v",
+    "flow": "flow",
+    "i18n-prepare-untranslated": "node ./scripts/prepareUntranslated.js && ./node_modules/.bin/rip json2pot 'app/i18n/extracted/**/*.json' -c id -o app/i18n/pot/decrediton.pot",
+    "i18n-assemble-translated": "node ./scripts/assembleTranslated.js && ./node_modules/.bin/rip po2json 'app/i18n/po/*.po' -m 'app/i18n/extracted/**/*.json' -c id -o app/i18n/translations --indentation 2 --sort-by-id",
+    "i18n-check-docs": "node ./scripts/docsTranslationStatus.js",
+    "i18n-check-dupes": "node ./scripts/checkDuplicateTranslationIds.js"
+  },
+  "jest": {
+    "verbose": true,
+    "rootDir": "test/unit",
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga|md)$": "<rootDir>/../mocks/fileMock.js",
+      "\\.(css|less)$": "<rootDir>/../mocks/styleMock.js",
+      "^grpc$": "<rootDir>/../mocks/grpcMock.js",
+      "^electron$": "<rootDir>/../mocks/electronMock.js"
+    },
+    "transformIgnorePatterns": [
+      "/node_modules/",
+      "app/middleware/walletrpc/api_grpc_pb.js",
+      "app/middleware/walletrpc/api_pb.js",
+      "app/middleware/ln/rpc_grpc_pb.js",
+      "app/middleware/ln/rpc_pb.js",
+      "app/middleware/ln/google/"
+    ],
+    "transform": {
+      "^.+\\.js?$": "babel-jest"
+    },
+    "setupFiles": [
+      "<rootDir>/../setup.js"
+    ],
+    "modulePaths": [
+      "<rootDir>/../../app",
+      "<rootDir>/../../app/components",
+      "<rootDir>/../../node_modules",
+      "<rootDir>/../../app/node_modules",
+      "<rootDir>/../"
+    ]
+  },
+  "build": {
+    "appId": "com.Electron.Decrediton",
+    "artifactName": "${productName}-v${version}.${ext}",
+    "dmg": {
+      "contents": [
+        {
+          "x": 135,
+          "y": 150
+        },
+        {
+          "x": 405,
+          "y": 150,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ],
+      "window": {
+        "width": 540,
+        "height": 315
+      }
+    },
+    "files": [
+      "dist/",
+      "node_modules/",
+      "app.html",
+      "staticPages/",
+      "main.js",
+      "main.js.map",
+      "package.json"
+    ],
+    "extraResources": [
+      {
+        "from": "bin",
+        "to": "bin"
+      },
+      "*.node"
+    ],
+    "mac": {
+      "extendInfo": {
+        "CFBundleExecutable": "Decrediton",
+        "CFBundleDisplayName": "Decrediton",
+        "CFBundleName": "Decrediton"
+      }
+    },
+    "win": {
+      "target": "nsis"
+    },
+    "linux": {
+      "category": "public.app-category.tools",
+      "target": [
+        "deb",
+        "rpm",
+        "tar.gz"
+      ]
+    },
+    "directories": {
+      "output": "release"
+    }
+  },
+  "bin": {
+    "electron": "./node_modules/.bin/electron"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/decred/decrediton.git"
+  },
+  "author": {
+    "name": "The Decred developers",
+    "email": "info@decred.org",
+    "url": "https://github.com/decred"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/decred/decrediton/issues"
+  },
+  "keywords": [
+    "decred",
+    "decrediton",
+    "electron",
+    "react",
+    "react-router",
+    "flux",
+    "webpack",
+    "react-hot"
+  ],
+  "homepage": "https://github.com/decred/decrediton#readme",
+  "devDependencies": {
+    "@babel/core": "^7.8.4",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/plugin-proposal-decorators": "^7.8.3",
+    "@babel/plugin-proposal-do-expressions": "^7.8.3",
+    "@babel/plugin-proposal-export-default-from": "^7.8.3",
+    "@babel/plugin-proposal-export-namespace-from": "^7.8.3",
+    "@babel/plugin-proposal-function-bind": "^7.8.3",
+    "@babel/plugin-proposal-function-sent": "^7.8.3",
+    "@babel/plugin-proposal-json-strings": "^7.8.3",
+    "@babel/plugin-proposal-logical-assignment-operators": "^7.8.3",
+    "@babel/plugin-proposal-nullish-coalescing-operator": "^7.8.3",
+    "@babel/plugin-proposal-numeric-separator": "^7.8.3",
+    "@babel/plugin-proposal-object-rest-spread": "^7.8.3",
+    "@babel/plugin-proposal-optional-chaining": "^7.8.3",
+    "@babel/plugin-proposal-throw-expressions": "^7.8.3",
+    "@babel/plugin-syntax-dynamic-import": "^7.8.3",
+    "@babel/plugin-syntax-import-meta": "^7.8.3",
+    "@babel/plugin-transform-modules-commonjs": "^7.8.3",
+    "@babel/plugin-transform-strict-mode": "^7.8.3",
+    "@babel/polyfill": "^7.8.3",
+    "@babel/preset-env": "^7.8.4",
+    "@babel/preset-flow": "^7.8.3",
+    "@babel/preset-react": "^7.8.3",
+    "@babel/register": "^7.8.3",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.4.0",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-eslint": "^10.0.3",
+    "babel-jest": "^25.1.0",
+    "babel-loader": "^8.0.5",
+    "babel-plugin-module-resolver": "^3.2.0",
+    "babel-plugin-react-intl": "^5.1.18",
+    "babel-runtime": "^6.26.0",
+    "clipboard-copy": "^2.0.1",
+    "concurrently": "^5.1.0",
+    "core-decorators": "^0.20.0",
+    "cross-env": "^5.2.1",
+    "css-loader": "^2.1.1",
+    "electron": "8.0.1",
+    "enzyme": "^3.11.0",
+    "eslint": "^6.8.0",
+    "eslint-formatter-pretty": "^3.0.1",
+    "eslint-plugin-react": "^7.18.0",
+    "express": "^4.16.4",
+    "fbjs-scripts": "^1.2.0",
+    "file-loader": "^2.0.0",
+    "google-protobuf": "^3.11.2",
+    "html-webpack-plugin": "^3.2.0",
+    "jest": "^25.1.0",
+    "jest-date-mock": "^1.0.8",
+    "less": "^3.10.3",
+    "less-loader": "^5.0.0",
+    "mini-css-extract-plugin": "^0.8.2",
+    "minimist": "^1.2.0",
+    "node-gyp": "^5.0.7",
+    "node-loader": "^0.6.0",
+    "react-intl-translations-manager": "^5.0.0",
+    "redux-logger": "^2.7.4",
+    "sinon": "^7.4.2",
+    "style-loader": "^0.23.1",
+    "stylelint-config-standard": "^19.0.0",
+    "terser-webpack-plugin": "^1.4.1",
+    "url-loader": "^1.1.2",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-middleware": "^3.3.0",
+    "webpack-hot-middleware": "^2.24.4",
+    "webpack-merge": "^4.1.4"
+  },
+  "dependencies": {
+    "@formatjs/intl-relativetimeformat": "^4.5.9",
+    "@formatjs/intl-utils": "^1.6.0",
+    "@hot-loader/react-dom": "^16.13.0",
+    "autobind-decorator": "^2.1.0",
+    "axios": "^0.18.1",
+    "connected-react-router": "^6.8.0",
+    "dom-helpers": "^3.4.0",
+    "electron-builder": "^21.2.0",
+    "electron-devtools-installer": "^2.2.4",
+    "electron-rebuild": "^1.10.0",
+    "enzyme-adapter-react-16": "^1.15.2",
+    "ini": "^1.3.4",
+    "int64-buffer": "^0.1.10",
+    "is-running": "^2.1.0",
+    "lodash": "^4.17.14",
+    "mv": "^2.1.1",
+    "node-abi": "^2.15.0",
+    "node-addon-loader": "decred/node-addon-loader#master",
+    "nouislider": "^12.0.0",
+    "prop-types": "^15.7.2",
+    "qr-image": "^3.2.0",
+    "raw-loader": "^0.5.1",
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0",
+    "react-draggable": "^4.2.0",
+    "react-event-listener": "^0.6.6",
+    "react-hot-loader": "^4.12.20",
+    "react-infinite-scroller": "^1.2.4",
+    "react-intl": "^3.11.0",
+    "react-intl-po": "^2.2.2",
+    "react-markdown": "^3.3.0",
+    "react-motion": "^0.5.2",
+    "react-redux": "^7.2.0",
+    "react-router-dom": "^5.1.2",
+    "react-router-transition": "^2.0.0",
+    "react-select": "1.0.0",
+    "react-timeout": "^1.2.0",
+    "react-visibility-sensor": "^4.1.3",
+    "recharts": "^1.8.5",
+    "redux": "^4.0.5",
+    "redux-thunk": "^2.3.0",
+    "reselect": "^4.0.0",
+    "source-map-support": "^0.5.16",
+    "string-argv": "0.1.1",
+    "stylelint": "^13.0.0",
+    "timezone-mock": "^1.0.12",
+    "trezor.js": "^8.1.0",
+    "winston": "^2.3.1",
+    "xstate": "^4.6.0"
+  },
+  "optionalDependencies": {
+    "google-proto-files": "^1.1.2",
+    "grpc-tools": "^1.8.1"
+  },
+  "devEngines": {
+    "node": ">=6.x",
+    "npm": ">=3.x"
+  }
+}

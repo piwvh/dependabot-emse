@@ -1,0 +1,157 @@
+{
+  "name": "@folio/eholdings",
+  "version": "2.0.1",
+  "description": "FOLIO UI module for eHoldings",
+  "main": "src/index.js",
+  "repository": "https://github.com/folio-org/ui-eholdings",
+  "license": "Apache-2.0",
+  "scripts": {
+    "start": "stripes serve",
+    "build": "stripes build --output dist",
+    "test": "stripes test karma",
+    "lint": "eslint ./ && stylelint \"src/**/*.css\"",
+    "eslint": "eslint ./",
+    "stylelint": "stylelint \"src/**/*.css\""
+  },
+  "husky": {
+    "hooks": {
+      "pre-push": "yarn lint >&2"
+    }
+  },
+  "devDependencies": {
+    "@bigtest/interactor": "^0.7.2",
+    "@bigtest/mirage": "^0.0.1",
+    "@bigtest/mocha": "^0.5.1",
+    "@bigtest/react": "^0.1.2",
+    "@folio/eslint-config-stripes": "^4.0.1",
+    "@folio/stripes": "^2.6.0",
+    "@folio/stripes-cli": "^1.8.0",
+    "babel-eslint": "^9.0.0",
+    "babel-polyfill": "^6.26.0",
+    "chai": "^4.0.2",
+    "eslint": "^5.5.0",
+    "husky": "^1.3.1",
+    "lodash": "^4.17.4",
+    "mocha": "^5.2.0",
+    "moment": "^2.22.2",
+    "qs": "^6.5.1",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "react-redux": "^5.0.7",
+    "react-transition-group": "^2.5.0",
+    "redux": "^3.0.0",
+    "rxjs": "^5.0.0",
+    "sinon": "^6.3.5",
+    "stylelint": "^9.5.0",
+    "stylelint-config-standard": "^18.2.0",
+    "stylelint-junit-formatter": "^0.2.1",
+    "webpack": "^4.0.0"
+  },
+  "dependencies": {
+    "classnames": "^2.2.5",
+    "final-form": "^4.18.2",
+    "final-form-arrays": "^3.0.1",
+    "final-form-focus": "^1.1.2",
+    "final-form-calculate": "^1.3.1",
+    "funcadelic": "^0.5.4",
+    "impagination": "^1.0.0-alpha.3",
+    "inflected": "^2.0.3",
+    "prop-types": "^15.6.2",
+    "react-final-form": "^6.3.0",
+    "react-final-form-arrays": "^3.1.0",
+    "react-hot-loader": "^4.3.12",
+    "react-intl": "^2.4.0",
+    "react-measure": "^2.1.0",
+    "react-router": "^4.3.1",
+    "react-router-dom": "^4.3.1",
+    "react-router-prop-types": "^1.0.4",
+    "redux-actions": "^2.2.1",
+    "redux-observable": "^0.15.0"
+  },
+  "peerDependencies": {
+    "@folio/stripes": "^2.6.0",
+    "react": "*"
+  },
+  "stripes": {
+    "type": "app",
+    "displayName": "ui-eholdings.meta.title",
+    "route": "/eholdings",
+    "hasSettings": true,
+    "icons": [
+      {
+        "name": "app",
+        "alt": "FOLIO UI module for eHoldings",
+        "title": "eHoldings"
+      }
+    ],
+    "okapiInterfaces": {
+      "eholdings": "2.0",
+      "tags": "1.0",
+      "erm": "1.0"
+    },
+    "permissionSets": [
+      {
+        "permissionName": "module.eholdings.enabled",
+        "displayName": "UI: eHoldings module is enabled",
+        "visible": true,
+        "subPermissions": [
+          "kb-ebsco.all"
+        ]
+      },
+      {
+        "permissionName": "settings.eholdings.enabled",
+        "displayName": "Settings (eHoldings): display list of settings pages",
+        "subPermissions": [
+          "settings.enabled"
+        ]
+      },
+      {
+        "permissionName": "ui-eholdings.settings.kb",
+        "displayName": "Settings (eHoldings): configure EBSCO RM API credentials",
+        "visible": true,
+        "subPermissions": [
+          "settings.eholdings.enabled"
+        ]
+      },
+      {
+        "permissionName": "ui-eholdings.settings.root-proxy",
+        "displayName": "Settings (eHoldings): configure root proxy setting",
+        "visible": true,
+        "subPermissions": [
+          "settings.eholdings.enabled"
+        ]
+      },
+      {
+        "permissionName": "ui-eholdings.package-title.select-unselect",
+        "displayName": "eHoldings: Can select/unselect packages and titles to/from your holdings",
+        "visible": true,
+        "subPermissions": [
+          "kb-ebsco.packages.item.put",
+          "kb-ebsco.resources.item.put"
+        ]
+      },
+      {
+        "permissionName": "ui-eholdings.records.edit",
+        "displayName": "eHoldings: Can edit providers, packages, titles detail records",
+        "visible": true,
+        "subPermissions": [
+          "kb-ebsco.packages.item.put",
+          "kb-ebsco.resources.item.put",
+          "kb-ebsco.providers.item.put"
+        ]
+      },
+      {
+        "permissionName": "ui-eholdings.titles-packages.create-delete",
+        "displayName": "eHoldings: Can create and delete custom packages and titles",
+        "visible": true,
+        "subPermissions": [
+          "kb-ebsco.packages.collection.post",
+          "kb-ebsco.resources.collection.post",
+          "kb-ebsco.titles.collection.post",
+          "kb-ebsco.packages.item.delete",
+          "kb-ebsco.resources.item.delete"
+        ]
+      }
+    ]
+  }
+}

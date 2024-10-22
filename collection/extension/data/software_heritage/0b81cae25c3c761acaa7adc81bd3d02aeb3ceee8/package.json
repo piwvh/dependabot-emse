@@ -1,0 +1,20 @@
+{
+  "scripts": {
+    "test": "cd test/ && yarn run-tests",
+    "example": "cd example/ && yarn start",
+    "release": "(cd client/ && npm publish) && (cd server/ && npm publish)",
+    "docs": "mdocs",
+    "clean": "git clean -Xdf"
+  },
+  "devDependencies": {
+    "@brillout/mdocs": "^0.1.24",
+    "yarn": "^1.19.1"
+  },
+  "workspaces": [
+    "server/",
+    "client/",
+    "example/",
+    "test/"
+  ],
+  "private": true
+}

@@ -1,0 +1,211 @@
+{
+  "name": "cockpit-composer",
+  "version": "0.0.1",
+  "private": true,
+  "engines": {
+    "node": ">=6",
+    "npm": ">=5.0"
+  },
+  "dependencies": {
+    "@patternfly/patternfly": "^2.31.0",
+    "@patternfly/react-core": "3.153.13",
+    "@patternfly/react-icons": "3.15.16",
+    "bootstrap": "3.4.1",
+    "core-js": "3.6.4",
+    "core-js-compat": "3.6.5",
+    "fastclick": "1.0.6",
+    "history": "3.3.0",
+    "jquery": "3.5.0",
+    "patternfly-react": "1.19.1",
+    "prop-types": "15.7.2",
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
+    "react-intl": "2.9.0",
+    "react-redux": "5.1.2",
+    "redux": "3.7.2",
+    "redux-saga": "0.15.6",
+    "regenerator-runtime": "0.13.5",
+    "reselect": "3.0.1",
+    "shortid": "2.2.15",
+    "whatwg-fetch": "1.1.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.2.3",
+    "@babel/preset-react": "^7.0.0",
+    "assets-webpack-plugin": "^3.9.6",
+    "babel-eslint": "^10.0.1",
+    "babel-loader": "^8.0.5",
+    "babel-plugin-istanbul": "^5.1.0",
+    "babel-plugin-react-intl": "3.0.1",
+    "babel-plugin-react-intl-auto": "^1.5.0",
+    "chrome-remote-interface": "^0.28.1",
+    "clean-webpack-plugin": "^1.0.0",
+    "connect-history-api-fallback": "^1.2.0",
+    "copy-webpack-plugin": "^4.6.0",
+    "css-loader": "^1.0.0",
+    "del": "^2.2.1",
+    "ejs": "^2.5.1",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-prettier": "^3.3.0",
+    "eslint-loader": "^2.1.1",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-mocha": "^5.2.0",
+    "eslint-plugin-prettier": "^3.0.0",
+    "eslint-plugin-react": "^7.11.1",
+    "eslint-plugin-redux-saga": "^0.10.0",
+    "faker": "^4.1.0",
+    "glob": "^6.0.4",
+    "html-webpack-plugin": "^3.2.0",
+    "jed": "^1.1.1",
+    "jsel": "^1.1.6",
+    "mini-css-extract-plugin": "^0.8.0",
+    "mkdirp": "^0.5.1",
+    "path-to-regexp": "^1.5.3",
+    "po2json": "^0.4.5",
+    "postcss": "^7.0.14",
+    "prettier": "^1.15.3",
+    "react-intl-po": "^2.2.2",
+    "sizzle": "^2.3.5",
+    "stdio": "^0.2.7",
+    "stylelint": "^9.5.0",
+    "stylelint-config-standard": "^18.2.0",
+    "webpack": "^4.28.4",
+    "webpack-cli": "^3.2.1"
+  },
+  "eslintConfig": {
+    "globals": {
+      "cockpit": true,
+      "browser": false,
+      "expect": true,
+      "timeout": true,
+      "$": false,
+      "$$": false
+    },
+    "parser": "babel-eslint",
+    "parserOptions": {
+      "ecmaVersion": 2018,
+      "sourceType": "module",
+      "ecmaFeatures": {
+        "jsx": true
+      }
+    },
+    "plugins": [
+      "prettier",
+      "mocha",
+      "redux-saga"
+    ],
+    "extends": [
+      "airbnb",
+      "eslint:recommended",
+      "plugin:react/recommended",
+      "plugin:jsx-a11y/recommended",
+      "plugin:import/recommended",
+      "plugin:redux-saga/recommended",
+      "plugin:mocha/recommended",
+      "prettier",
+      "prettier/react"
+    ],
+    "rules": {
+      "max-len": [
+        "error",
+        {
+          "code": 120,
+          "ignoreStrings": true,
+          "ignoreTemplateLiterals": true,
+          "ignoreTrailingComments": true
+        }
+      ],
+      "no-console": 0,
+      "react/jsx-filename-extension": [
+        1,
+        {
+          "extensions": [
+            ".js",
+            ".jsx"
+          ]
+        }
+      ],
+      "import/no-extraneous-dependencies": [
+        "error",
+        {
+          "devDependencies": [
+            "test/**/*.js",
+            "webpack.config.js",
+            "run.js",
+            "utils/*.js"
+          ]
+        }
+      ],
+      "import/no-unresolved": [
+        "error",
+        {
+          "ignore": [
+            "./build/*",
+            "mochawesome/addContext",
+            "chai",
+            "cockpit"
+          ]
+        }
+      ],
+      "react/jsx-wrap-multilines": [
+        "error",
+        {
+          "declaration": false,
+          "assignment": false
+        }
+      ],
+      "jsx-a11y/label-has-associated-control": [
+        "error",
+        {
+          "labelComponents": [
+            "label"
+          ],
+          "labelAttributes": [
+            "htmlFor"
+          ],
+          "controlComponents": [
+            "input"
+          ]
+        }
+      ],
+      "react/destructuring-assignment": "off",
+      "react/no-multi-comp": "off",
+      "jsx-a11y/no-onchange": "off",
+      "jsx-a11y/label-has-for": "off",
+      "redux-saga/no-unhandled-errors": 0,
+      "jsx-a11y/anchor-is-valid": "off",
+      "jsx-a11y/no-autofocus": "off"
+    },
+    "env": {
+      "browser": true,
+      "commonjs": true,
+      "es6": true,
+      "node": true,
+      "mocha": true
+    }
+  },
+  "prettier": {
+    "printWidth": 120
+  },
+  "stylelint": {
+    "extends": "stylelint-config-standard",
+    "rules": {
+      "string-quotes": "single"
+    }
+  },
+  "scripts": {
+    "eslint": "eslint components core data pages utils main.js webpack.config.js",
+    "stylelint": "stylelint \"components/**/*.css\" \"pages/**/*.css\"",
+    "lint": "npm run eslint && npm run stylelint",
+    "clean": "node run clean",
+    "build": "npm run translations:po2json && webpack",
+    "watch": "npm run build -- --watch",
+    "translations:extract": "babel 'components/**/*.js' 'core/**/*.js' 'pages/**/*.js' 'data/**/*.js' main.js >/dev/null",
+    "translations:json2pot": "mkdirp build/messages && rip json2pot 'build/messages/**/*.json' -o po/cockpit-composer.pot && node utils/add-title.js ./public/manifest.json po/cockpit-composer.pot",
+    "translations:po2json": "npm run translations:extract && rip po2json 'po/*.po' -m 'build/messages/**/*.json' -o build/translations.json"
+  }
+}

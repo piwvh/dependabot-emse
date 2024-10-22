@@ -1,0 +1,180 @@
+{
+  "private": true,
+  "homepage": "https://sitnik.ru/",
+  "license": "MIT",
+  "scripts": {
+    "spell": "yaspeller dist/**/*.html",
+    "lint": "eslint . scripts/{build,clean-cdn,update-*} && stylelint src/**/*.sss",
+    "test": "yarn lint & yarn build && size-limit && yarn spell",
+    "clean": "del-cli dist/ .cache location/last.json",
+    "start": "parcel serve src/index.pug --open",
+    "build": "NODE_ENV=production ./scripts/build",
+    "nginx": "podman build -t sitnikru . && podman run -v ./dist/:/var/www/dist/ --privileged --rm -p 8000:80 -e PORT=80 -it sitnikru"
+  },
+  "dependencies": {
+    "autoprefixer": "^9.7.3",
+    "del": "^5.1.0",
+    "dotenv": "^8.2.0",
+    "parcel-bundler": "^1.12.4",
+    "postcss": "^7.0.23",
+    "postcss-combine-media-query": "^1.0.0",
+    "postcss-hexrgba": "^2.0.0",
+    "postcss-media-minmax": "^4.0.0",
+    "postcss-nested": "^4.2.1",
+    "postcss-pxtorem": "^4.0.1",
+    "posthtml": "^0.12.0",
+    "pug": "^2.0.4",
+    "rollup": "^1.27.8",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-terser": "^5.1.2",
+    "strip-debug": "^4.0.0",
+    "sugarss": "^2.0.0",
+    "three": "^0.111.0"
+  },
+  "devDependencies": {
+    "@logux/eslint-config": "^35.0.1",
+    "@logux/sharec-config": "^0.5.6",
+    "@size-limit/file": "^2.2.2",
+    "chalk": "^3.0.0",
+    "del-cli": "^3.0.0",
+    "eslint": "^6.7.2",
+    "eslint-config-standard": "^14.1.0",
+    "eslint-plugin-es5": "^1.4.1",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jest": "^23.1.1",
+    "eslint-plugin-node": "^10.0.0",
+    "eslint-plugin-prefer-let": "^1.0.1",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-security": "^1.4.0",
+    "eslint-plugin-standard": "^4.0.1",
+    "eslint-plugin-unicorn": "^14.0.1",
+    "fast-xml-parser": "^3.15.0",
+    "husky": "^3.1.0",
+    "lint-staged": "^9.5.0",
+    "stylelint": "^12.0.0",
+    "stylelint-config-recess-order": "^2.0.3",
+    "stylelint-config-standard": "^19.0.0",
+    "stylelint-order": "^3.1.1",
+    "yaspeller": "^6.0.2"
+  },
+  "browserslist": [
+    "last 2 versions",
+    "not dead",
+    "not ie 11",
+    "not ie_mob 11",
+    "not op_mini all",
+    "not op_mob > 0",
+    "not and_qq > 0",
+    "not android > 0"
+  ],
+  "postcss": {
+    "plugins": {
+      "postcss-media-minmax": {},
+      "postcss-nested": {},
+      "postcss-hexrgba": {},
+      "postcss-pxtorem": {
+        "propList": [
+          "*"
+        ],
+        "selectorBlackList": [
+          "html",
+          ".photo"
+        ],
+        "rootValue": 20
+      },
+      "autoprefixer": {}
+    }
+  },
+  "engines": {
+    "node": ">=13.0.0"
+  },
+  "browser": {
+    "node_modules/three/src/renderers/webvr/*": "./src/empty.js"
+  },
+  "eslintConfig": {
+    "extends": "@logux/eslint-config/node",
+    "rules": {
+      "security/detect-non-literal-regexp": "off",
+      "security/detect-unsafe-regex": "off",
+      "node/no-unpublished-require": "off",
+      "global-require": "off"
+    }
+  },
+  "eslintIgnore": [
+    "node_modules",
+    "dist",
+    ".cache"
+  ],
+  "stylelint": {
+    "extends": [
+      "stylelint-config-standard",
+      "stylelint-config-recess-order"
+    ],
+    "rules": {
+      "declaration-block-trailing-semicolon": null,
+      "block-closing-brace-newline-before": null,
+      "block-opening-brace-space-before": null
+    }
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": "eslint",
+    "*.sss": [
+      "stylelint --fix",
+      "git add"
+    ]
+  },
+  "size-limit": [
+    {
+      "name": "Critical",
+      "path": "dist/en/index.html",
+      "limit": "4 KB"
+    },
+    {
+      "name": "Full",
+      "path": [
+        "dist/worker.*.js",
+        "dist/map.*.webp",
+        "dist/here.*.webp",
+        "dist/photo.*.webp"
+      ],
+      "limit": "176 KB"
+    }
+  ],
+  "yaspeller": {
+    "ignoreCapitalization": true,
+    "dictionary": [
+      "GPG",
+      "1F710E4D",
+      "WhatsApp",
+      "WeChat",
+      "NSFW",
+      "GitHub",
+      "Autoprefixer",
+      "PostCSS",
+      "Browserslist",
+      "Instagram",
+      "Linguopunk",
+      "ru",
+      "sitnik",
+      "Телеграм",
+      "ВКонтакте",
+      "Твиттер",
+      "Гитхаб",
+      "Автопрефиксер",
+      "Браузерслист",
+      "фронтенд",
+      "Инстаграм",
+      "Лингвопанк"
+    ]
+  },
+  "sharec": {
+    "config": "@logux/sharec-config",
+    "version": "0.5.6"
+  }
+}

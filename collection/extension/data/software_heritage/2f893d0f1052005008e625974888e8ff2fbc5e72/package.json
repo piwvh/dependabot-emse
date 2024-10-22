@@ -1,0 +1,101 @@
+{
+  "name": "react-table",
+  "version": "7.0.0-alpha.29",
+  "description": "A fast, lightweight, opinionated table and datagrid built on React",
+  "license": "MIT",
+  "homepage": "https://github.com/tannerlinsley/react-table#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tannerlinsley/react-table.git"
+  },
+  "keywords": [
+    "react",
+    "table",
+    "react-table",
+    "datagrid"
+  ],
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "jsnext:main": "dist/index.es.js",
+  "scripts": {
+    "commit": "git add . && git-cz",
+    "test": "is-ci 'test:ci' 'test:dev'",
+    "test:dev": "jest --watch",
+    "test:ci": "jest",
+    "build": "rollup -c",
+    "start": "rollup -c -w",
+    "prepare": "yarn build",
+    "release": "yarn publish",
+    "releaseNext": "yarn publish --tag next",
+    "format": "prettier ./src/**/*.{md,js,jsx,tsx} --write"
+  },
+  "files": [
+    "CHANGELOG.md",
+    "src/**/*.js",
+    "dist",
+    "LICENCE",
+    "package.json",
+    "README.md"
+  ],
+  "peerDependencies": {
+    "prop-types": "^15.5.0",
+    "react": "^16.8.3",
+    "react-dom": "^16.8.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/runtime": "^7.5.5",
+    "@commitlint/cli": "^8.1.0",
+    "@commitlint/config-conventional": "^8.1.0",
+    "@svgr/rollup": "^4.3.2",
+    "@testing-library/dom": "^6.0.0",
+    "@testing-library/jest-dom": "^4.0.0",
+    "@testing-library/react": "^9.1.1",
+    "babel-eslint": "9.x",
+    "commitizen": "^4.0.3",
+    "core-js": "3.2.1",
+    "cross-env": "^5.2.0",
+    "eslint": "5.x",
+    "eslint-config-prettier": "^4.3.0",
+    "eslint-config-react-app": "^4.0.1",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-config-standard-react": "^7.0.2",
+    "eslint-plugin-flowtype": "2.x",
+    "eslint-plugin-import": "2.18.2",
+    "eslint-plugin-jsx-a11y": "6.2.3",
+    "eslint-plugin-node": "^8.0.0",
+    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "7.14.3",
+    "eslint-plugin-react-hooks": "1.7.0",
+    "eslint-plugin-standard": "^4.0.0",
+    "husky": "^3.0.3",
+    "is-ci-cli": "^1.1.1",
+    "jest": "^24.8.0",
+    "jest-cli": "^24.8.0",
+    "jest-runner-eslint": "^0.7.4",
+    "jest-watch-select-projects": "^0.1.2",
+    "jest-watch-typeahead": "^0.3.1",
+    "lint-staged": "^9.2.1",
+    "prettier": "^1.18.2",
+    "prop-types": "^15.5.0",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "rollup": "^0.68.0",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-commonjs": "^9.1.3",
+    "rollup-plugin-node-resolve": "^4.0.0",
+    "rollup-plugin-peer-deps-external": "^2.2.0",
+    "rollup-plugin-uglify": "^6.0.2",
+    "snapshot-diff": "^0.5.2"
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-conventional-changelog"
+    }
+  },
+  "browserslist": "> 0.25%, not dead"
+}
